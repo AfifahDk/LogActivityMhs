@@ -19,9 +19,9 @@ import javax.swing.table.DefaultTableModel;
 public class Tugas extends javax.swing.JFrame {
 
        private void kosong(){
-           txtNo.setEditable(true);
-           txtNo.setText(null);
-           txtNama.setText(null);
+           txtNoTugas.setEditable(true);
+           txtNoTugas.setText(null);
+           txtNamaTugas.setText(null);
            txtMatkul.setText(null);
            cbHari.setSelectedItem(this);
            txtWaktu.setText(null);
@@ -56,6 +56,8 @@ public class Tugas extends javax.swing.JFrame {
      */
     public Tugas() {
         initComponents();
+        tampilkan_data();
+        kosong();
     }
 
     /**
@@ -73,14 +75,14 @@ public class Tugas extends javax.swing.JFrame {
         jScrollPane3 = new javax.swing.JScrollPane();
         jTable3 = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        txtNo = new javax.swing.JTextField();
+        NoTugas = new javax.swing.JLabel();
+        NamaTugas = new javax.swing.JLabel();
+        Matkul = new javax.swing.JLabel();
+        Hari = new javax.swing.JLabel();
+        Waktu = new javax.swing.JLabel();
+        txtNoTugas = new javax.swing.JTextField();
         txtMatkul = new javax.swing.JTextField();
-        txtNama = new javax.swing.JTextField();
+        txtNamaTugas = new javax.swing.JTextField();
         txtWaktu = new javax.swing.JTextField();
         cbHari = new javax.swing.JComboBox();
         btInsert = new javax.swing.JButton();
@@ -123,19 +125,19 @@ public class Tugas extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel1.setText("TUGAS");
 
-        jLabel2.setText("No tugas");
+        NoTugas.setText("No tugas");
 
-        jLabel3.setText("Nama tugas");
+        NamaTugas.setText("Nama tugas");
 
-        jLabel4.setText("Nama Matakuliah");
+        Matkul.setText("Nama Matakuliah");
 
-        jLabel5.setText("Hari Pengumpulan");
+        Hari.setText("Hari Pengumpulan");
 
-        jLabel6.setText("Waktu Pengumpulan");
+        Waktu.setText("Waktu Pengumpulan");
 
-        txtNo.addActionListener(new java.awt.event.ActionListener() {
+        txtNoTugas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNoActionPerformed(evt);
+                txtNoTugasActionPerformed(evt);
             }
         });
 
@@ -145,9 +147,9 @@ public class Tugas extends javax.swing.JFrame {
             }
         });
 
-        txtNama.addActionListener(new java.awt.event.ActionListener() {
+        txtNamaTugas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNamaActionPerformed(evt);
+                txtNamaTugasActionPerformed(evt);
             }
         });
 
@@ -212,7 +214,7 @@ public class Tugas extends javax.swing.JFrame {
                                 .addComponent(btCheck)
                                 .addGap(69, 69, 69))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel6)
+                                .addComponent(Waktu)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(txtWaktu, javax.swing.GroupLayout.PREFERRED_SIZE, 303, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -223,18 +225,18 @@ public class Tugas extends javax.swing.JFrame {
                                 .addGap(62, 62, 62)
                                 .addComponent(btDelete))))
                     .addComponent(txtMatkul, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 303, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtNo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 303, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtNoTugas, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 303, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel3)
+                        .addComponent(NamaTugas)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(txtNama, javax.swing.GroupLayout.PREFERRED_SIZE, 303, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txtNamaTugas, javax.swing.GroupLayout.PREFERRED_SIZE, 303, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel2))
+                            .addComponent(Matkul)
+                            .addComponent(NoTugas))
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabel5)
+                        .addComponent(Hari)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -254,23 +256,23 @@ public class Tugas extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addGap(32, 32, 32)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(txtNo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(NoTugas)
+                    .addComponent(txtNoTugas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(txtNama, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(NamaTugas)
+                    .addComponent(txtNamaTugas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
+                    .addComponent(Matkul)
                     .addComponent(txtMatkul, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
+                    .addComponent(Hari)
                     .addComponent(cbHari, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
+                    .addComponent(Waktu)
                     .addComponent(txtWaktu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(28, 28, 28)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -292,11 +294,22 @@ public class Tugas extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtMatkulActionPerformed
 
-    private void txtNamaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNamaActionPerformed
+    private void txtNamaTugasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNamaTugasActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtNamaActionPerformed
+    }//GEN-LAST:event_txtNamaTugasActionPerformed
 
     private void btInsertActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btInsertActionPerformed
+ try{
+            String sql = "insert into jadwal values ('"+txtNoTugas.getText()+"','"+txtNamaTugas.getText()+"','"+txtMatkul.getText()+"','"+cbHari.getSelectedItem()+"')";
+            java.sql.Connection con = (Connection)konek.konekDB();
+            java.sql.PreparedStatement pstm = con.prepareStatement(sql);
+            pstm.execute();
+            JOptionPane.showMessageDialog(null, "Proses insert data berhasil..");
+            tampilkan_data();
+            kosong();
+        }catch (HeadlessException | SQLException e){
+            JOptionPane.showMessageDialog(this, e.getMessage());
+        }
         // TODO add your handling code here:
     }//GEN-LAST:event_btInsertActionPerformed
 
@@ -312,9 +325,9 @@ public class Tugas extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btSaveActionPerformed
 
-    private void txtNoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNoActionPerformed
+    private void txtNoTugasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNoTugasActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtNoActionPerformed
+    }//GEN-LAST:event_txtNoTugasActionPerformed
 
     /**
      * @param args the command line arguments
@@ -352,6 +365,11 @@ public class Tugas extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Hari;
+    private javax.swing.JLabel Matkul;
+    private javax.swing.JLabel NamaTugas;
+    private javax.swing.JLabel NoTugas;
+    private javax.swing.JLabel Waktu;
     private javax.swing.JButton btCheck;
     private javax.swing.JButton btDelete;
     private javax.swing.JButton btGanti;
@@ -359,11 +377,6 @@ public class Tugas extends javax.swing.JFrame {
     private javax.swing.JButton btSave;
     private javax.swing.JComboBox cbHari;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
@@ -372,8 +385,8 @@ public class Tugas extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTable tugas;
     private javax.swing.JTextField txtMatkul;
-    private javax.swing.JTextField txtNama;
-    private javax.swing.JTextField txtNo;
+    private javax.swing.JTextField txtNamaTugas;
+    private javax.swing.JTextField txtNoTugas;
     private javax.swing.JTextField txtWaktu;
     // End of variables declaration//GEN-END:variables
 }
