@@ -6,6 +6,8 @@
 package Tampilan;
 
 import javax.swing.JOptionPane;
+import Menu.Tugas;
+import Menu.jadwal;
 
 /**
  *
@@ -43,10 +45,10 @@ public class MainMenu extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         MenuPanel = new javax.swing.JPanel();
-        btnScheduling = new javax.swing.JLabel();
-        btnAssignment = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
+        btnJadwal = new javax.swing.JButton();
+        btnTugas = new javax.swing.JButton();
         AboutPanel = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
 
@@ -157,7 +159,7 @@ public class MainMenu extends javax.swing.JFrame {
                         .addGap(119, 119, 119)
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 431, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 13, Short.MAX_VALUE))
+                .addGap(0, 80, Short.MAX_VALUE))
         );
         HomePanelLayout.setVerticalGroup(
             HomePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -171,16 +173,25 @@ public class MainMenu extends javax.swing.JFrame {
 
         mainPanel.add(HomePanel, "card2");
 
-        btnScheduling.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        btnScheduling.setText("Scheduling");
-
-        btnAssignment.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        btnAssignment.setText("Assignment");
-
         jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Tampilan/icon/c431bbc35c698a8de1bf634948ff29a8.jpg"))); // NOI18N
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Tampilan/icon/a7959efbe3b9b73b463b23ef86fef50a.jpg"))); // NOI18N
-        jLabel9.setText("jLabel9");
+
+        btnJadwal.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        btnJadwal.setText("Schedule");
+        btnJadwal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnJadwalActionPerformed(evt);
+            }
+        });
+
+        btnTugas.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        btnTugas.setText("Assignment");
+        btnTugas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTugasActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout MenuPanelLayout = new javax.swing.GroupLayout(MenuPanel);
         MenuPanel.setLayout(MenuPanelLayout);
@@ -189,27 +200,27 @@ public class MainMenu extends javax.swing.JFrame {
             .addGroup(MenuPanelLayout.createSequentialGroup()
                 .addGroup(MenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(MenuPanelLayout.createSequentialGroup()
-                        .addGap(19, 19, 19)
-                        .addGroup(MenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
+                        .addGap(50, 50, 50)
+                        .addGroup(MenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 405, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel11)))
                     .addGroup(MenuPanelLayout.createSequentialGroup()
-                        .addGap(200, 200, 200)
-                        .addComponent(btnAssignment)))
-                .addContainerGap(20, Short.MAX_VALUE))
+                        .addGap(208, 208, 208)
+                        .addComponent(btnTugas)))
+                .addContainerGap(56, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MenuPanelLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(btnScheduling)
-                .addGap(182, 182, 182))
+                .addComponent(btnJadwal)
+                .addGap(213, 213, 213))
         );
         MenuPanelLayout.setVerticalGroup(
             MenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(MenuPanelLayout.createSequentialGroup()
-                .addComponent(btnScheduling)
-                .addGap(1, 1, 1)
+                .addComponent(btnJadwal)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnAssignment)
+                .addComponent(btnTugas)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 201, Short.MAX_VALUE))
         );
@@ -228,14 +239,14 @@ public class MainMenu extends javax.swing.JFrame {
             .addGroup(AboutPanelLayout.createSequentialGroup()
                 .addGap(199, 199, 199)
                 .addComponent(jLabel5)
-                .addContainerGap(211, Short.MAX_VALUE))
+                .addContainerGap(278, Short.MAX_VALUE))
         );
         AboutPanelLayout.setVerticalGroup(
             AboutPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(AboutPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel5)
-                .addContainerGap(429, Short.MAX_VALUE))
+                .addContainerGap(451, Short.MAX_VALUE))
         );
 
         mainPanel.add(AboutPanel, "card4");
@@ -322,6 +333,18 @@ public class MainMenu extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnLogoutActionPerformed
 
+    private void btnJadwalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnJadwalActionPerformed
+        dispose();
+        jadwal n = new jadwal();
+        n.setVisible(true); // TODO add your handling code here:
+    }//GEN-LAST:event_btnJadwalActionPerformed
+
+    private void btnTugasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTugasActionPerformed
+        dispose();
+        Tugas n = new Tugas();
+        n.setVisible(true);      
+    }//GEN-LAST:event_btnTugasActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -363,11 +386,11 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JPanel MenuPanel;
     private javax.swing.JPanel bodyPanel;
     private javax.swing.JLabel btnAbout;
-    private javax.swing.JLabel btnAssignment;
     private javax.swing.JLabel btnHome;
+    private javax.swing.JButton btnJadwal;
     private javax.swing.JButton btnLogout;
     private javax.swing.JLabel btnMenu;
-    private javax.swing.JLabel btnScheduling;
+    private javax.swing.JButton btnTugas;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

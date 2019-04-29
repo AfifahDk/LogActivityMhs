@@ -87,7 +87,7 @@ public class Login extends javax.swing.JFrame {
 
         jLabel5.setText("Don't have an account?");
 
-        btnSignup.setText("Signup");
+        btnSignup.setText("Sign up");
         btnSignup.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSignupActionPerformed(evt);
