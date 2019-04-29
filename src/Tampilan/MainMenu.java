@@ -8,6 +8,7 @@ package Tampilan;
 import javax.swing.JOptionPane;
 import Menu.Tugas;
 import Menu.jadwal;
+import Menu.konek;
 
 /**
  *
