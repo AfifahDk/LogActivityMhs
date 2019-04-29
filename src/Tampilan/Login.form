@@ -215,8 +215,11 @@
             </Component>
             <Component class="javax.swing.JButton" name="btnSignup">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Signup"/>
+                <Property name="text" type="java.lang.String" value="Sign up"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSignupActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
