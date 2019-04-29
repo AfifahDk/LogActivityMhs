@@ -47,7 +47,7 @@ public class MainMenu extends javax.swing.JFrame {
         MenuPanel = new javax.swing.JPanel();
         jLabel11 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        btnJadwal = new javax.swing.JButton();
+        btnjadwal = new javax.swing.JButton();
         btnTugas = new javax.swing.JButton();
         AboutPanel = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
@@ -177,11 +177,11 @@ public class MainMenu extends javax.swing.JFrame {
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Tampilan/icon/a7959efbe3b9b73b463b23ef86fef50a.jpg"))); // NOI18N
 
-        btnJadwal.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        btnJadwal.setText("Schedule");
-        btnJadwal.addActionListener(new java.awt.event.ActionListener() {
+        btnjadwal.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        btnjadwal.setText("Schedule");
+        btnjadwal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnJadwalActionPerformed(evt);
+                btnjadwalActionPerformed(evt);
             }
         });
 
@@ -210,13 +210,13 @@ public class MainMenu extends javax.swing.JFrame {
                 .addContainerGap(56, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MenuPanelLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(btnJadwal)
+                .addComponent(btnjadwal)
                 .addGap(213, 213, 213))
         );
         MenuPanelLayout.setVerticalGroup(
             MenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(MenuPanelLayout.createSequentialGroup()
-                .addComponent(btnJadwal)
+                .addComponent(btnjadwal)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -265,7 +265,7 @@ public class MainMenu extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bodyPanelLayout.createSequentialGroup()
                 .addGroup(bodyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(menuPanel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(mainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 455, Short.MAX_VALUE))
+                    .addComponent(mainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 455, Short.MAX_VALUE))
                 .addGap(2, 2, 2))
         );
 
@@ -333,11 +333,11 @@ public class MainMenu extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnLogoutActionPerformed
 
-    private void btnJadwalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnJadwalActionPerformed
+    private void btnjadwalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnjadwalActionPerformed
         dispose();
         jadwal n = new jadwal();
-        n.setVisible(true); // TODO add your handling code here:
-    }//GEN-LAST:event_btnJadwalActionPerformed
+        n.setVisible(true);
+    }//GEN-LAST:event_btnjadwalActionPerformed
 
     private void btnTugasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTugasActionPerformed
         dispose();
@@ -387,10 +387,10 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JPanel bodyPanel;
     private javax.swing.JLabel btnAbout;
     private javax.swing.JLabel btnHome;
-    private javax.swing.JButton btnJadwal;
     private javax.swing.JButton btnLogout;
     private javax.swing.JLabel btnMenu;
     private javax.swing.JButton btnTugas;
+    private javax.swing.JButton btnjadwal;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
