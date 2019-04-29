@@ -5,7 +5,6 @@
  */
 package Menu;
 
-import Menu.konek;
 import Tampilan.MainMenu;
 import java.awt.HeadlessException;
 import java.sql.Connection;

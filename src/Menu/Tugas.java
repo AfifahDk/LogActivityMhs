@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 package Menu;
-import Menu.konek;
 import Tampilan.MainMenu;
 import java.awt.HeadlessException;
 import java.sql.Connection;
