@@ -5,7 +5,7 @@
  */
 package Menu;
 
-import Tubes.konek;
+import Menu.konek;
 import java.awt.HeadlessException;
 import java.sql.Connection;
 import java.sql.SQLException;
