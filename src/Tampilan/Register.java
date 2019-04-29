@@ -59,7 +59,7 @@ public class Register extends javax.swing.JFrame {
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Tampilan/icon/download.png"))); // NOI18N
         jLabel2.setText("LOG ACTIVITY MAHASISWA");
 
-        jLabel3.setText("Email atau No.Telp");
+        jLabel3.setText("Email");
 
         jLabel4.setText("Nama Lengkap");
 

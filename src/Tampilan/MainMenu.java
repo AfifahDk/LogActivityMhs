@@ -5,6 +5,8 @@
  */
 package Tampilan;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author acer
@@ -27,24 +29,32 @@ public class MainMenu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel10 = new javax.swing.JLabel();
         bodyPanel = new javax.swing.JPanel();
         menuPanel = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         btnHome = new javax.swing.JLabel();
         btnMenu = new javax.swing.JLabel();
         btnAbout = new javax.swing.JLabel();
-        btnKeluar = new javax.swing.JLabel();
+        btnLogout = new javax.swing.JButton();
         mainPanel = new javax.swing.JPanel();
         HomePanel = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         MenuPanel = new javax.swing.JPanel();
+        btnScheduling = new javax.swing.JLabel();
+        btnAssignment = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
         AboutPanel = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
+
+        jLabel10.setText("jLabel10");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        menuPanel.setBackground(new java.awt.Color(204, 204, 204));
+        menuPanel.setBackground(new java.awt.Color(204, 204, 255));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Tampilan/icon/download.png"))); // NOI18N
@@ -52,15 +62,37 @@ public class MainMenu extends javax.swing.JFrame {
 
         btnHome.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         btnHome.setText("Home");
+        btnHome.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnHomeMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnHomeMouseEntered(evt);
+            }
+        });
 
         btnMenu.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         btnMenu.setText("Menu");
+        btnMenu.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnMenuMouseClicked(evt);
+            }
+        });
 
         btnAbout.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         btnAbout.setText("About");
+        btnAbout.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnAboutMouseClicked(evt);
+            }
+        });
 
-        btnKeluar.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        btnKeluar.setText("Keluar");
+        btnLogout.setText("Logout");
+        btnLogout.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLogoutActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout menuPanelLayout = new javax.swing.GroupLayout(menuPanel);
         menuPanel.setLayout(menuPanelLayout);
@@ -75,11 +107,9 @@ public class MainMenu extends javax.swing.JFrame {
                             .addComponent(btnMenu)
                             .addComponent(btnHome)))
                     .addGroup(menuPanelLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(btnKeluar))
-                    .addGroup(menuPanelLayout.createSequentialGroup()
                         .addGap(28, 28, 28)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 286, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 286, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnLogout))
                 .addContainerGap(36, Short.MAX_VALUE))
         );
         menuPanelLayout.setVerticalGroup(
@@ -93,14 +123,18 @@ public class MainMenu extends javax.swing.JFrame {
                 .addGap(55, 55, 55)
                 .addComponent(btnAbout)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnKeluar)
-                .addGap(21, 21, 21))
+                .addComponent(btnLogout)
+                .addContainerGap())
         );
 
         mainPanel.setBackground(new java.awt.Color(255, 255, 255));
         mainPanel.setLayout(new java.awt.CardLayout());
 
-        HomePanel.setBackground(new java.awt.Color(204, 204, 204));
+        HomePanel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                HomePanelMouseClicked(evt);
+            }
+        });
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 3, 24)); // NOI18N
         jLabel2.setText("Selamat Datang");
@@ -114,7 +148,6 @@ public class MainMenu extends javax.swing.JFrame {
         HomePanel.setLayout(HomePanelLayout);
         HomePanelLayout.setHorizontalGroup(
             HomePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
             .addGroup(HomePanelLayout.createSequentialGroup()
                 .addGroup(HomePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(HomePanelLayout.createSequentialGroup()
@@ -122,8 +155,9 @@ public class MainMenu extends javax.swing.JFrame {
                         .addComponent(jLabel3))
                     .addGroup(HomePanelLayout.createSequentialGroup()
                         .addGap(119, 119, 119)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(0, 82, Short.MAX_VALUE))
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 431, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 13, Short.MAX_VALUE))
         );
         HomePanelLayout.setVerticalGroup(
             HomePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -137,32 +171,71 @@ public class MainMenu extends javax.swing.JFrame {
 
         mainPanel.add(HomePanel, "card2");
 
-        MenuPanel.setBackground(new java.awt.Color(255, 255, 255));
+        btnScheduling.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btnScheduling.setText("Scheduling");
+
+        btnAssignment.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btnAssignment.setText("Assignment");
+
+        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Tampilan/icon/c431bbc35c698a8de1bf634948ff29a8.jpg"))); // NOI18N
+
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Tampilan/icon/a7959efbe3b9b73b463b23ef86fef50a.jpg"))); // NOI18N
+        jLabel9.setText("jLabel9");
 
         javax.swing.GroupLayout MenuPanelLayout = new javax.swing.GroupLayout(MenuPanel);
         MenuPanel.setLayout(MenuPanelLayout);
         MenuPanelLayout.setHorizontalGroup(
             MenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 448, Short.MAX_VALUE)
+            .addGroup(MenuPanelLayout.createSequentialGroup()
+                .addGroup(MenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(MenuPanelLayout.createSequentialGroup()
+                        .addGap(19, 19, 19)
+                        .addGroup(MenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
+                    .addGroup(MenuPanelLayout.createSequentialGroup()
+                        .addGap(200, 200, 200)
+                        .addComponent(btnAssignment)))
+                .addContainerGap(20, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MenuPanelLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(btnScheduling)
+                .addGap(182, 182, 182))
         );
         MenuPanelLayout.setVerticalGroup(
             MenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 445, Short.MAX_VALUE)
+            .addGroup(MenuPanelLayout.createSequentialGroup()
+                .addComponent(btnScheduling)
+                .addGap(1, 1, 1)
+                .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnAssignment)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 201, Short.MAX_VALUE))
         );
 
         mainPanel.add(MenuPanel, "card3");
 
         AboutPanel.setBackground(new java.awt.Color(255, 255, 255));
 
+        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel5.setText("About");
+
         javax.swing.GroupLayout AboutPanelLayout = new javax.swing.GroupLayout(AboutPanel);
         AboutPanel.setLayout(AboutPanelLayout);
         AboutPanelLayout.setHorizontalGroup(
             AboutPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 448, Short.MAX_VALUE)
+            .addGroup(AboutPanelLayout.createSequentialGroup()
+                .addGap(199, 199, 199)
+                .addComponent(jLabel5)
+                .addContainerGap(211, Short.MAX_VALUE))
         );
         AboutPanelLayout.setVerticalGroup(
             AboutPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 445, Short.MAX_VALUE)
+            .addGroup(AboutPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel5)
+                .addContainerGap(429, Short.MAX_VALUE))
         );
 
         mainPanel.add(AboutPanel, "card4");
@@ -178,8 +251,11 @@ public class MainMenu extends javax.swing.JFrame {
         );
         bodyPanelLayout.setVerticalGroup(
             bodyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(menuPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(mainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bodyPanelLayout.createSequentialGroup()
+                .addGroup(bodyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(menuPanel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(mainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 455, Short.MAX_VALUE))
+                .addGap(2, 2, 2))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -195,6 +271,56 @@ public class MainMenu extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void HomePanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HomePanelMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_HomePanelMouseClicked
+
+    private void btnHomeMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnHomeMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnHomeMouseEntered
+
+    private void btnHomeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnHomeMouseClicked
+    mainPanel.removeAll();
+    mainPanel.repaint();
+    mainPanel.revalidate();
+
+    mainPanel.add(HomePanel);
+    mainPanel.repaint();
+    mainPanel.revalidate();
+    }//GEN-LAST:event_btnHomeMouseClicked
+
+    private void btnMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMenuMouseClicked
+    mainPanel.removeAll();
+    mainPanel.repaint();
+    mainPanel.revalidate();
+
+    mainPanel.add(MenuPanel);
+    mainPanel.repaint();
+    mainPanel.revalidate();
+    }//GEN-LAST:event_btnMenuMouseClicked
+
+    private void btnAboutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAboutMouseClicked
+    mainPanel.removeAll();
+    mainPanel.repaint();
+    mainPanel.revalidate();
+
+    mainPanel.add(AboutPanel);
+    mainPanel.repaint();
+    mainPanel.revalidate();
+    // TODO add your handling code here:
+    }//GEN-LAST:event_btnAboutMouseClicked
+
+    private void btnLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogoutActionPerformed
+    int dialogBtn = JOptionPane.YES_NO_OPTION;
+    int dialogResult = JOptionPane.showConfirmDialog(this, "Anda yakin akan keluar?", "PERINGATAN",  dialogBtn);
+
+    if (dialogResult == 0){
+	System.exit(0);
+    }
+    else{
+        }
+    }//GEN-LAST:event_btnLogoutActionPerformed
 
     /**
      * @param args the command line arguments
@@ -237,13 +363,19 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JPanel MenuPanel;
     private javax.swing.JPanel bodyPanel;
     private javax.swing.JLabel btnAbout;
+    private javax.swing.JLabel btnAssignment;
     private javax.swing.JLabel btnHome;
-    private javax.swing.JLabel btnKeluar;
+    private javax.swing.JButton btnLogout;
     private javax.swing.JLabel btnMenu;
+    private javax.swing.JLabel btnScheduling;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel mainPanel;
     private javax.swing.JPanel menuPanel;
     // End of variables declaration//GEN-END:variables
