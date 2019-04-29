@@ -197,16 +197,11 @@ public class Register extends javax.swing.JFrame {
     }//GEN-LAST:event_txtPasswordActionPerformed
 
     private void btnRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegisterActionPerformed
-        JOptionPane.showMessageDialog(null, "Register Berhasil");
-        dispose();
-        Login n = new Login();
-        n.setVisible(true);
+     
     }//GEN-LAST:event_btnRegisterActionPerformed
 
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
-        dispose();
-        Login n = new Login();
-        n.setVisible(true);
+    
     }//GEN-LAST:event_btnLoginActionPerformed
 
     /**
