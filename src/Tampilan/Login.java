@@ -7,6 +7,8 @@ package Tampilan;
 
 import Menu.konek;
 import static Menu.konek.konekDB;
+import static Tampilan.Register.con;
+import static Tampilan.Register.stm;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -204,16 +206,21 @@ public class Login extends javax.swing.JFrame {
 
     private void btnSignupActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSignupActionPerformed
         dispose();
-        Register n = new Register();
+        Register n = null;
+        try {
+            n = new Register();
+        } catch (SQLException ex) {
+            Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+        }
         n.setVisible(true);      
     }//GEN-LAST:event_btnSignupActionPerformed
 
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
          try {
-            sql = "SELECT * FROM Login WHERE Username='"+txtUsername.getText()+"' AND Password='"+txtPassword.getText()+"'";
+            sql = "SELECT * FROM Login WHERE Username='"+txtUsername.getText()+"' AND Password='"+txtPassword.getPassword()+"'";
             rs = stm.executeQuery(sql);
             if(rs.next()){
-                if(txtUsername.getText().equals(rs.getString("username")) && txtPassword.getText().equals(rs.getString("password"))){
+                if(txtUsername.getText().equals(rs.getString("username")) && txtPassword.getPassword().equals(rs.getString("password"))){
                     JOptionPane.showMessageDialog(null, "berhasil login");
                 }
             }else{

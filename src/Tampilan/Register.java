@@ -14,25 +14,35 @@ import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import sun.security.util.Password;
 
 /**
  *
  * @author acer
  */
 public class Register extends javax.swing.JFrame {
+    public static Connection con;
+    public static Statement stm;
+    ResultSet rs;
+    String sql;
+    
     private void kosong(){
-        txtEmail.setText("true");
-        txtNama.setText("true");
-        txtUsername.setText("true");
-        txtPassword.setText("true");
-        txtConfirm.setText("true");
+        txtEmail.setText("");
+        txtNama.setText("");
+        txtUsername.setText("");
+        txtPassword.setText("");
+        txtConfirm.setText("");
         
     }
     /**
      * Creates new form Register
      */
-    public Register() {
+    public Register()throws SQLException {
         initComponents();
+        konek DB = new konek();
+        konekDB();
+        con = DB.con;
+        stm = DB.stm;
     }
 
     /**
@@ -116,8 +126,6 @@ public class Register extends javax.swing.JFrame {
         });
 
         jLabel8.setText("Confirm Password");
-
-        txtConfirm.setText("jPasswordField1");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -229,6 +237,25 @@ public class Register extends javax.swing.JFrame {
 
     private void btnRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegisterActionPerformed
      
+        try {
+            if (txtConfirm.getPassword().equals(txtPassword.getPassword()) &&  txtEmail.getText().length()>= 2 && txtNama.getText().length()>= 2 && txtUsername.getText().length()>= 2 ) {
+
+            String sql = "insert into Register values ('"+txtEmail.getText()+"','"+txtNama.getText()+"','"+txtUsername.getText()+"','"+String.valueOf(txtPassword.getPassword())+"','"+String.valueOf( txtConfirm.getPassword())+"')";
+            java.sql.Connection con = (Connection)konek.konekDB();
+            java.sql.PreparedStatement pstm = con.prepareStatement(sql);
+            pstm.execute();
+                {
+                    JOptionPane.showMessageDialog(null, "Save Succesfull");
+                }
+                kosong();
+            } else {
+                JOptionPane.showMessageDialog(null, "Access Denied");
+                kosong();
+            };
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "ERROR");
+        }
+    
     }//GEN-LAST:event_btnRegisterActionPerformed
 
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
@@ -274,7 +301,11 @@ public class Register extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Register().setVisible(true);
+                try {
+                    new Register().setVisible(true);
+                } catch (SQLException ex) {
+                    Logger.getLogger(Register.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
     }
