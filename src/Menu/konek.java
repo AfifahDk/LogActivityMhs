@@ -21,6 +21,7 @@ public class konek {
             con =DriverManager.getConnection(url,user,pass);
             stm = con.createStatement();
             System.out.println("koneksi berhasil;");
+            
         } catch (Exception e) {
             System.err.println("koneksi gagal" +e.getMessage());
         }
