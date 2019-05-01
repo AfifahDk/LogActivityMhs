@@ -7,7 +7,9 @@ package Menu;
 import Tampilan.MainMenu;
 import java.awt.HeadlessException;
 import java.sql.Connection;
+import java.sql.JDBCType;
 import java.sql.SQLException;
+import java.sql.Types;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -36,7 +38,7 @@ public class Tugas extends javax.swing.JFrame {
            model.addColumn("Waktu pengumpulan");
            
         try{
-            String sql = "select * from jadwal";
+            String sql = "select * from tugas";
             java.sql.Connection con = (Connection)konek.konekDB();
             java.sql.Statement stm = con.createStatement();
             java.sql.ResultSet res = stm.executeQuery(sql);
@@ -153,8 +155,19 @@ public class Tugas extends javax.swing.JFrame {
             }
         });
 
+        txtWaktu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtWaktuActionPerformed(evt);
+            }
+        });
+
         cbHari.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Senin", "Selasa", "Rabu", "Kamis", "Jum'at", "Sabtu", "Minggu" }));
         cbHari.setBorder(null);
+        cbHari.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbHariActionPerformed(evt);
+            }
+        });
 
         btInsert.setText("Insert");
         btInsert.addActionListener(new java.awt.event.ActionListener() {
@@ -197,6 +210,11 @@ public class Tugas extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        tugas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tugasMouseClicked(evt);
+            }
+        });
         jScrollPane4.setViewportView(tugas);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -299,17 +317,8 @@ public class Tugas extends javax.swing.JFrame {
     }//GEN-LAST:event_txtNamaTugasActionPerformed
 
     private void btInsertActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btInsertActionPerformed
- try{
-            String sql = "insert into jadwal values ('"+txtNoTugas.getText()+"','"+txtNamaTugas.getText()+"','"+txtMatkul.getText()+"','"+cbHari.getSelectedItem()+"')";
-            java.sql.Connection con = (Connection)konek.konekDB();
-            java.sql.PreparedStatement pstm = con.prepareStatement(sql);
-            pstm.execute();
-            JOptionPane.showMessageDialog(null, "Proses insert data berhasil..");
-            tampilkan_data();
-            kosong();
-        }catch (HeadlessException | SQLException e){
-            JOptionPane.showMessageDialog(this, e.getMessage());
-        }
+        kosong();
+       
         // TODO add your handling code here:
     }//GEN-LAST:event_btInsertActionPerformed
 
@@ -322,12 +331,50 @@ public class Tugas extends javax.swing.JFrame {
     }//GEN-LAST:event_btGantiActionPerformed
 
     private void btSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSaveActionPerformed
-        // TODO add your handling code here:
+           // TODO add your handling code here:
+        try{
+            String sql = "INSERT INTO tugas VALUES ('"+txtNoTugas.getText()+"','"+txtNamaTugas.getText()+"','"+txtMatkul.getText()+"','"+cbHari.getSelectedItem()+"','"+txtWaktu.getText()+"')";
+            java.sql.Connection con = (Connection)konek.konekDB();
+            java.sql.PreparedStatement pstm = con.prepareStatement(sql);
+            pstm.execute();
+            JOptionPane.showMessageDialog(null, "Proses simpan data berhasil..");
+            tampilkan_data();
+            kosong();
+        }catch(HeadlessException | SQLException e){
+           JOptionPane.showMessageDialog(this,e.getMessage());
+        }
     }//GEN-LAST:event_btSaveActionPerformed
-
+     
     private void txtNoTugasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNoTugasActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNoTugasActionPerformed
+
+    private void tugasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tugasMouseClicked
+        // TODO add your handling code here:
+        int baris = tugas.rowAtPoint(evt.getPoint());
+        String notugas = tugas.getValueAt(baris,1).toString();
+        txtNoTugas.setText(notugas);
+        
+        String nama = tugas.getValueAt(baris,2).toString();
+        txtNamaTugas.setText(nama);
+        
+        String matkul = tugas.getValueAt(baris,3).toString();
+        txtMatkul.setText(matkul);
+        
+        String hari = tugas.getValueAt(baris,4).toString();
+        cbHari.setSelectedItem(hari);
+        
+        String waktu = tugas.getValueAt(baris,5).toString();
+        txtWaktu.setText(waktu);
+    }//GEN-LAST:event_tugasMouseClicked
+
+    private void cbHariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbHariActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbHariActionPerformed
+
+    private void txtWaktuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtWaktuActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtWaktuActionPerformed
 
     /**
      * @param args the command line arguments
