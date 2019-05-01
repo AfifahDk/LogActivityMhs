@@ -94,6 +94,11 @@ public class Tugas extends javax.swing.JFrame {
         txtMatkul = new javax.swing.JTextField();
         cbHari = new javax.swing.JComboBox();
         txtWaktu = new javax.swing.JTextField();
+        btExit = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        txtsmatkul = new javax.swing.JComboBox();
+        SEARCH = new javax.swing.JLabel();
+        jComboBox2 = new javax.swing.JComboBox();
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -124,19 +129,25 @@ public class Tugas extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Aplikasi");
 
-        jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
         jLabel1.setText("TUGAS");
 
+        NoTugas.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
         NoTugas.setText("No tugas");
 
+        NamaTugas.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
         NamaTugas.setText("Nama tugas");
 
+        Matkul.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
         Matkul.setText("Nama Matakuliah");
 
+        Hari.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
         Hari.setText("Hari Pengumpulan");
 
+        Waktu.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
         Waktu.setText("Waktu Pengumpulan");
 
+        btInsert.setFont(new java.awt.Font("Comic Sans MS", 0, 11)); // NOI18N
         btInsert.setText("Insert");
         btInsert.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -144,6 +155,7 @@ public class Tugas extends javax.swing.JFrame {
             }
         });
 
+        btCheck.setFont(new java.awt.Font("Comic Sans MS", 0, 11)); // NOI18N
         btCheck.setText("Check");
         btCheck.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -151,6 +163,7 @@ public class Tugas extends javax.swing.JFrame {
             }
         });
 
+        btGanti.setFont(new java.awt.Font("Comic Sans MS", 0, 11)); // NOI18N
         btGanti.setText("Ganti");
         btGanti.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -158,6 +171,7 @@ public class Tugas extends javax.swing.JFrame {
             }
         });
 
+        btSave.setFont(new java.awt.Font("Comic Sans MS", 0, 11)); // NOI18N
         btSave.setText("Save");
         btSave.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -165,8 +179,15 @@ public class Tugas extends javax.swing.JFrame {
             }
         });
 
+        btDelete.setFont(new java.awt.Font("Comic Sans MS", 0, 11)); // NOI18N
         btDelete.setText("Delete");
+        btDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btDeleteActionPerformed(evt);
+            }
+        });
 
+        tugas.setFont(new java.awt.Font("Comic Sans MS", 0, 11)); // NOI18N
         tugas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -191,6 +212,7 @@ public class Tugas extends javax.swing.JFrame {
             }
         });
 
+        cbHari.setFont(new java.awt.Font("Comic Sans MS", 0, 11)); // NOI18N
         cbHari.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "SENIN", "SELASA", "RABU", "KAMIS", "JUMAT", "SABTU", "MINGGU" }));
 
         txtWaktu.addActionListener(new java.awt.event.ActionListener() {
@@ -199,61 +221,86 @@ public class Tugas extends javax.swing.JFrame {
             }
         });
 
+        btExit.setFont(new java.awt.Font("Comic Sans MS", 0, 11)); // NOI18N
+        btExit.setText("EXIT");
+        btExit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btExitActionPerformed(evt);
+            }
+        });
+
+        jLabel2.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel2.setText("*Tahun-Bulan-Tanggal Jam-Menit-Detik");
+
+        txtsmatkul.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "-Mata Kuliah", "Basis Data", "DRPL", "Kewirausahaan", "PBO", "Sistem Operasi", "Strategi Algoritma", "TBFO" }));
+
+        SEARCH.setFont(new java.awt.Font("Comic Sans MS", 0, 11)); // NOI18N
+        SEARCH.setText("SEARCH");
+
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "-HARI", "SENIN", "SELASA", "RABU", "KAMIS", "JUMAT", "SABTU", "MINGGU" }));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(70, 70, 70)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(btInsert)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btCheck)
-                                .addGap(69, 69, 69))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(Waktu)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                        .addComponent(btGanti)
-                        .addGap(64, 64, 64)
-                        .addComponent(btSave)
-                        .addGap(62, 62, 62)
-                        .addComponent(btDelete))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(Hari)
-                        .addGap(207, 207, 207)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtWaktu, javax.swing.GroupLayout.DEFAULT_SIZE, 218, Short.MAX_VALUE)
-                            .addComponent(cbHari, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtNoTugas)
-                            .addComponent(txtNamaTugas)
-                            .addComponent(txtMatkul))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(NoTugas)
-                            .addComponent(NamaTugas)
-                            .addComponent(Matkul))
-                        .addGap(430, 430, 430)))
-                .addGap(58, 58, 58))
-            .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(25, 25, 25)
-                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 651, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 651, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(45, 45, 45)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(NoTugas)
+                                            .addComponent(NamaTugas)
+                                            .addComponent(Matkul)
+                                            .addComponent(Hari)
+                                            .addComponent(Waktu)))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(btInsert)
+                                            .addComponent(SEARCH))
+                                        .addGap(38, 38, 38)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(txtsmatkul, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(btCheck)
+                                                .addGap(27, 27, 27)
+                                                .addComponent(btGanti)))))
+                                .addGap(39, 39, 39)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(btSave)
+                                        .addGap(39, 39, 39)
+                                        .addComponent(btDelete)
+                                        .addGap(109, 109, 109))
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(txtWaktu, javax.swing.GroupLayout.DEFAULT_SIZE, 218, Short.MAX_VALUE)
+                                            .addComponent(cbHari, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(txtNoTugas)
+                                            .addComponent(txtNamaTugas)
+                                            .addComponent(txtMatkul))))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btExit))))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(325, 325, 325)
+                        .addGap(271, 271, 271)
                         .addComponent(jLabel1)))
-                .addContainerGap(24, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
-                .addGap(32, 32, 32)
+                .addGap(13, 13, 13)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(NoTugas)
                     .addComponent(txtNoTugas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -261,26 +308,34 @@ public class Tugas extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(NamaTugas)
                     .addComponent(txtNamaTugas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Matkul)
                     .addComponent(txtMatkul, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(Hari)
                     .addComponent(cbHari, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Waktu)
                     .addComponent(txtWaktu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(28, 28, 28)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel2)
+                .addGap(5, 5, 5)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(SEARCH)
+                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtsmatkul, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btInsert)
                     .addComponent(btCheck)
                     .addComponent(btGanti)
                     .addComponent(btSave)
-                    .addComponent(btDelete))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
+                    .addComponent(btDelete)
+                    .addComponent(btExit))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(41, 41, 41))
         );
@@ -295,7 +350,7 @@ public class Tugas extends javax.swing.JFrame {
     }//GEN-LAST:event_btInsertActionPerformed
 
     private void btCheckActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCheckActionPerformed
-        // TODO add your handling code here:
+        tampilkan_data();
     }//GEN-LAST:event_btCheckActionPerformed
 
     private void btGantiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btGantiActionPerformed
@@ -355,6 +410,24 @@ public class Tugas extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNoTugasActionPerformed
 
+    private void btDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btDeleteActionPerformed
+        // TODO add your handling code here:
+        try{
+        String sql = "Delete FROM tugas WHERE no_tugas='"+txtNoTugas.getText()+"'";
+        java.sql.Connection conn = (Connection)konek.konekDB();
+        java.sql.PreparedStatement pstm= conn.prepareStatement(sql);
+        pstm.execute();
+        JOptionPane.showMessageDialog(null,"Hapus Data Berhasil!!");
+        }catch(HeadlessException | SQLException e){
+           JOptionPane.showMessageDialog(this,e.getMessage());
+        }
+    }//GEN-LAST:event_btDeleteActionPerformed
+
+    private void btExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btExitActionPerformed
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_btExitActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -395,14 +468,18 @@ public class Tugas extends javax.swing.JFrame {
     private javax.swing.JLabel Matkul;
     private javax.swing.JLabel NamaTugas;
     private javax.swing.JLabel NoTugas;
+    private javax.swing.JLabel SEARCH;
     private javax.swing.JLabel Waktu;
     private javax.swing.JButton btCheck;
     private javax.swing.JButton btDelete;
+    private javax.swing.JButton btExit;
     private javax.swing.JButton btGanti;
     private javax.swing.JButton btInsert;
     private javax.swing.JButton btSave;
     private javax.swing.JComboBox cbHari;
+    private javax.swing.JComboBox jComboBox2;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
@@ -414,5 +491,6 @@ public class Tugas extends javax.swing.JFrame {
     private javax.swing.JTextField txtNamaTugas;
     private javax.swing.JTextField txtNoTugas;
     private javax.swing.JTextField txtWaktu;
+    private javax.swing.JComboBox txtsmatkul;
     // End of variables declaration//GEN-END:variables
 }
