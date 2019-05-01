@@ -223,20 +223,14 @@ public class Tugas extends javax.swing.JFrame {
                         .addComponent(btDelete))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(Hari)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel1)
-                                .addGap(228, 228, 228))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(207, 207, 207)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(txtWaktu, javax.swing.GroupLayout.DEFAULT_SIZE, 218, Short.MAX_VALUE)
-                                    .addComponent(cbHari, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtNoTugas)
-                                    .addComponent(txtNamaTugas)
-                                    .addComponent(txtMatkul))
-                                .addGap(0, 0, Short.MAX_VALUE))))
+                        .addGap(207, 207, 207)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtWaktu, javax.swing.GroupLayout.DEFAULT_SIZE, 218, Short.MAX_VALUE)
+                            .addComponent(cbHari, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtNoTugas)
+                            .addComponent(txtNamaTugas)
+                            .addComponent(txtMatkul))
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(NoTugas)
@@ -245,8 +239,13 @@ public class Tugas extends javax.swing.JFrame {
                         .addGap(430, 430, 430)))
                 .addGap(58, 58, 58))
             .addGroup(layout.createSequentialGroup()
-                .addGap(25, 25, 25)
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 651, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(25, 25, 25)
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 651, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(325, 325, 325)
+                        .addComponent(jLabel1)))
                 .addContainerGap(24, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -301,6 +300,17 @@ public class Tugas extends javax.swing.JFrame {
 
     private void btGantiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btGantiActionPerformed
         // TODO add your handling code here:
+        try{
+            String sql = "UPDATE tugas SET no_tugas='"+txtNoTugas.getText()+"',nama_tugas='"+txtNamaTugas.getText()+"',mata_kuliah='"+txtMatkul.getText()+"',hari_pengumpulan='"+cbHari.getSelectedItem()+"',waktu_pengumpulan='"+txtWaktu.getText()+"' WHERE no_tugas = '"+txtNoTugas.getText()+"'";
+            java.sql.Connection conn = (Connection)konek.konekDB();
+            java.sql.PreparedStatement pstm = conn.prepareStatement(sql);
+            pstm.execute();
+            JOptionPane.showMessageDialog(null,"Edit Data BERHASIL!!");
+        }catch(HeadlessException | SQLException e){
+           JOptionPane.showMessageDialog(this,e.getMessage());
+        }
+        tampilkan_data();
+        kosong();
     }//GEN-LAST:event_btGantiActionPerformed
 
     private void btSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSaveActionPerformed
