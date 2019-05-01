@@ -88,7 +88,7 @@ public class jadwal extends javax.swing.JFrame {
         txtwaktumulai = new javax.swing.JTextField();
         txtwaktuselesai = new javax.swing.JTextField();
         txtruangan = new javax.swing.JTextField();
-        cbhari = new javax.swing.JComboBox<String>();
+        cbhari = new javax.swing.JComboBox<>();
         jScrollPane1 = new javax.swing.JScrollPane();
         tabeljadwal = new javax.swing.JTable();
         btnclear = new javax.swing.JButton();
@@ -96,25 +96,31 @@ public class jadwal extends javax.swing.JFrame {
         btndelete = new javax.swing.JButton();
         btninsert = new javax.swing.JButton();
         btnexit = new javax.swing.JButton();
-        jScrollBar1 = new javax.swing.JScrollBar();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Comic Sans MS", 1, 15)); // NOI18N
         jLabel1.setText("LOG ACTIVITY MAHASISWA");
 
+        jLabel2.setFont(new java.awt.Font("Comic Sans MS", 0, 11)); // NOI18N
         jLabel2.setText("NO JADWAL");
 
+        jLabel3.setFont(new java.awt.Font("Comic Sans MS", 0, 11)); // NOI18N
         jLabel3.setText("NAMA JADWAL");
 
+        jLabel4.setFont(new java.awt.Font("Comic Sans MS", 0, 11)); // NOI18N
         jLabel4.setText("HARI");
 
+        jLabel5.setFont(new java.awt.Font("Comic Sans MS", 0, 11)); // NOI18N
         jLabel5.setText("MATA KULIAH");
 
+        jLabel6.setFont(new java.awt.Font("Comic Sans MS", 0, 11)); // NOI18N
         jLabel6.setText("RUANGAN");
 
+        jLabel7.setFont(new java.awt.Font("Comic Sans MS", 0, 11)); // NOI18N
         jLabel7.setText("WAKTU MULAI");
 
+        jLabel8.setFont(new java.awt.Font("Comic Sans MS", 0, 11)); // NOI18N
         jLabel8.setText("WAKTU SELESAI");
 
         txtnamajadwal.addActionListener(new java.awt.event.ActionListener() {
@@ -135,13 +141,15 @@ public class jadwal extends javax.swing.JFrame {
             }
         });
 
-        cbhari.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "SENIN", "SELASA", "RABU", "KAMIS", "JUMAT", "SABTU" }));
+        cbhari.setFont(new java.awt.Font("Comic Sans MS", 0, 11)); // NOI18N
+        cbhari.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SENIN", "SELASA", "RABU", "KAMIS", "JUMAT", "SABTU" }));
         cbhari.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbhariActionPerformed(evt);
             }
         });
 
+        tabeljadwal.setFont(new java.awt.Font("Comic Sans MS", 0, 11)); // NOI18N
         tabeljadwal.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -160,7 +168,7 @@ public class jadwal extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(tabeljadwal);
 
-        btnclear.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnclear.setFont(new java.awt.Font("Comic Sans MS", 1, 12)); // NOI18N
         btnclear.setText("clear");
         btnclear.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -168,7 +176,7 @@ public class jadwal extends javax.swing.JFrame {
             }
         });
 
-        btnupdate.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnupdate.setFont(new java.awt.Font("Comic Sans MS", 1, 12)); // NOI18N
         btnupdate.setText("update");
         btnupdate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -176,7 +184,7 @@ public class jadwal extends javax.swing.JFrame {
             }
         });
 
-        btndelete.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btndelete.setFont(new java.awt.Font("Comic Sans MS", 1, 12)); // NOI18N
         btndelete.setText("delete");
         btndelete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -184,7 +192,7 @@ public class jadwal extends javax.swing.JFrame {
             }
         });
 
-        btninsert.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btninsert.setFont(new java.awt.Font("Comic Sans MS", 1, 12)); // NOI18N
         btninsert.setText("insert");
         btninsert.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -192,7 +200,7 @@ public class jadwal extends javax.swing.JFrame {
             }
         });
 
-        btnexit.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnexit.setFont(new java.awt.Font("Comic Sans MS", 1, 12)); // NOI18N
         btnexit.setText("exit");
         btnexit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -242,7 +250,7 @@ public class jadwal extends javax.swing.JFrame {
                                     .addComponent(btnclear, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGap(97, 97, 97)
                                     .addComponent(btnupdate, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 101, Short.MAX_VALUE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 117, Short.MAX_VALUE)
                                     .addComponent(btndelete, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGap(101, 101, 101)
                                     .addComponent(btninsert, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -251,8 +259,7 @@ public class jadwal extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(294, 294, 294)
                         .addComponent(jLabel1)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jScrollBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(37, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -291,7 +298,7 @@ public class jadwal extends javax.swing.JFrame {
                             .addComponent(jLabel7))
                         .addGap(18, 18, 18)
                         .addComponent(txtwaktuselesai, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnclear)
                     .addComponent(btnupdate)
@@ -301,7 +308,6 @@ public class jadwal extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(35, 35, 35))
-            .addComponent(jScrollBar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -455,7 +461,6 @@ public class jadwal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JScrollBar jScrollBar1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tabeljadwal;
     private javax.swing.JTextField txtmatakuliah;
