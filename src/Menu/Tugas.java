@@ -425,7 +425,9 @@ public class Tugas extends javax.swing.JFrame {
 
     private void btExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btExitActionPerformed
         // TODO add your handling code here:
-        System.exit(0);
+        dispose();
+        MainMenu n = new MainMenu();
+        n.setVisible(true);
     }//GEN-LAST:event_btExitActionPerformed
 
     /**
