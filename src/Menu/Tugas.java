@@ -128,6 +128,7 @@ public class Tugas extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Aplikasi");
+        setBackground(new java.awt.Color(51, 51, 255));
 
         jLabel1.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
         jLabel1.setText("TUGAS");
@@ -344,14 +345,33 @@ public class Tugas extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btInsertActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btInsertActionPerformed
-        kosong();
+    private void btDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btDeleteActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btInsertActionPerformed
+        try{
+            String sql = "Delete FROM tugas WHERE no_tugas='"+txtNoTugas.getText()+"'";
+            java.sql.Connection conn = (Connection)konek.konekDB();
+            java.sql.PreparedStatement pstm= conn.prepareStatement(sql);
+            pstm.execute();
+            JOptionPane.showMessageDialog(null,"Hapus Data Berhasil!!");
+        }catch(HeadlessException | SQLException e){
+            JOptionPane.showMessageDialog(this,e.getMessage());
+        }
+    }//GEN-LAST:event_btDeleteActionPerformed
 
-    private void btCheckActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCheckActionPerformed
-        tampilkan_data();
-    }//GEN-LAST:event_btCheckActionPerformed
+    private void btSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSaveActionPerformed
+        // TODO add your handling code here:
+        try{
+            String sql = "INSERT INTO tugas VALUES ('"+txtNoTugas.getText()+"','"+txtNamaTugas.getText()+"','"+txtMatkul.getText()+"','"+cbHari.getSelectedItem()+"','"+txtWaktu.getText()+"')";
+            java.sql.Connection con = (Connection)konek.konekDB();
+            java.sql.PreparedStatement pstm = con.prepareStatement(sql);
+            pstm.execute();
+            JOptionPane.showMessageDialog(null, "Proses simpan data berhasil..");
+            tampilkan_data();
+            kosong();
+        }catch(HeadlessException | SQLException e){
+            JOptionPane.showMessageDialog(this,e.getMessage());
+        }
+    }//GEN-LAST:event_btSaveActionPerformed
 
     private void btGantiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btGantiActionPerformed
         // TODO add your handling code here:
@@ -362,66 +382,11 @@ public class Tugas extends javax.swing.JFrame {
             pstm.execute();
             JOptionPane.showMessageDialog(null,"Edit Data BERHASIL!!");
         }catch(HeadlessException | SQLException e){
-           JOptionPane.showMessageDialog(this,e.getMessage());
+            JOptionPane.showMessageDialog(this,e.getMessage());
         }
         tampilkan_data();
         kosong();
     }//GEN-LAST:event_btGantiActionPerformed
-
-    private void btSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSaveActionPerformed
-           // TODO add your handling code here:
-        try{
-            String sql = "INSERT INTO tugas VALUES ('"+txtNoTugas.getText()+"','"+txtNamaTugas.getText()+"','"+txtMatkul.getText()+"','"+cbHari.getSelectedItem()+"','"+txtWaktu.getText()+"')";
-            java.sql.Connection con = (Connection)konek.konekDB();
-            java.sql.PreparedStatement pstm = con.prepareStatement(sql);
-            pstm.execute();
-            JOptionPane.showMessageDialog(null, "Proses simpan data berhasil..");
-            tampilkan_data();
-            kosong();
-        }catch(HeadlessException | SQLException e){
-           JOptionPane.showMessageDialog(this,e.getMessage());
-        }
-    }//GEN-LAST:event_btSaveActionPerformed
-     
-    private void tugasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tugasMouseClicked
-        // TODO add your handling code here:
-        int baris = tugas.rowAtPoint(evt.getPoint());
-        String notugas = tugas.getValueAt(baris,0).toString();
-        txtNoTugas.setText(notugas);
-        
-        String nama = tugas.getValueAt(baris,1).toString();
-        txtNamaTugas.setText(nama);
-        
-        String matkul = tugas.getValueAt(baris,2).toString();
-        txtMatkul.setText(matkul);
-        
-        String hari = tugas.getValueAt(baris,3).toString();
-        cbHari.setSelectedItem(hari);
-        
-        String waktu = tugas.getValueAt(baris,4).toString();
-        txtWaktu.setText(waktu);
-    }//GEN-LAST:event_tugasMouseClicked
-
-    private void txtWaktuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtWaktuActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtWaktuActionPerformed
-
-    private void txtNoTugasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNoTugasActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtNoTugasActionPerformed
-
-    private void btDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btDeleteActionPerformed
-        // TODO add your handling code here:
-        try{
-        String sql = "Delete FROM tugas WHERE no_tugas='"+txtNoTugas.getText()+"'";
-        java.sql.Connection conn = (Connection)konek.konekDB();
-        java.sql.PreparedStatement pstm= conn.prepareStatement(sql);
-        pstm.execute();
-        JOptionPane.showMessageDialog(null,"Hapus Data Berhasil!!");
-        }catch(HeadlessException | SQLException e){
-           JOptionPane.showMessageDialog(this,e.getMessage());
-        }
-    }//GEN-LAST:event_btDeleteActionPerformed
 
     private void btExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btExitActionPerformed
         // TODO add your handling code here:
@@ -430,6 +395,42 @@ public class Tugas extends javax.swing.JFrame {
         n.setVisible(true);
     }//GEN-LAST:event_btExitActionPerformed
 
+    private void btCheckActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCheckActionPerformed
+        tampilkan_data();
+    }//GEN-LAST:event_btCheckActionPerformed
+
+    private void txtWaktuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtWaktuActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtWaktuActionPerformed
+
+    private void btInsertActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btInsertActionPerformed
+        kosong();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btInsertActionPerformed
+
+    private void txtNoTugasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNoTugasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNoTugasActionPerformed
+
+    private void tugasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tugasMouseClicked
+        // TODO add your handling code here:
+        int baris = tugas.rowAtPoint(evt.getPoint());
+        String notugas = tugas.getValueAt(baris,0).toString();
+        txtNoTugas.setText(notugas);
+
+        String nama = tugas.getValueAt(baris,1).toString();
+        txtNamaTugas.setText(nama);
+
+        String matkul = tugas.getValueAt(baris,2).toString();
+        txtMatkul.setText(matkul);
+
+        String hari = tugas.getValueAt(baris,3).toString();
+        cbHari.setSelectedItem(hari);
+
+        String waktu = tugas.getValueAt(baris,4).toString();
+        txtWaktu.setText(waktu);
+    }//GEN-LAST:event_tugasMouseClicked
+     
     /**
      * @param args the command line arguments
      */
