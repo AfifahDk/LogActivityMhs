@@ -213,6 +213,12 @@ public class Tugas extends javax.swing.JFrame {
             }
         });
 
+        txtNamaTugas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNamaTugasActionPerformed(evt);
+            }
+        });
+
         cbHari.setFont(new java.awt.Font("Comic Sans MS", 0, 11)); // NOI18N
         cbHari.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "SENIN", "SELASA", "RABU", "KAMIS", "JUMAT", "SABTU", "MINGGU" }));
 
@@ -234,6 +240,11 @@ public class Tugas extends javax.swing.JFrame {
         jLabel2.setText("*Tahun-Bulan-Tanggal Jam-Menit-Detik");
 
         txtsmatkul.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "-Mata Kuliah", "Basis Data", "DRPL", "Kewirausahaan", "PBO", "Sistem Operasi", "Strategi Algoritma", "TBFO" }));
+        txtsmatkul.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtsmatkulActionPerformed(evt);
+            }
+        });
 
         SEARCH.setFont(new java.awt.Font("Comic Sans MS", 0, 11)); // NOI18N
         SEARCH.setText("SEARCH");
@@ -434,6 +445,14 @@ public class Tugas extends javax.swing.JFrame {
         String waktu = tugas.getValueAt(baris,4).toString();
         txtWaktu.setText(waktu);
     }//GEN-LAST:event_tugasMouseClicked
+
+    private void txtNamaTugasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNamaTugasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNamaTugasActionPerformed
+
+    private void txtsmatkulActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtsmatkulActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtsmatkulActionPerformed
      
     /**
      * @param args the command line arguments

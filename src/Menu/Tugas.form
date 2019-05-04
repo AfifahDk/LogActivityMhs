@@ -368,6 +368,9 @@
       </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="txtNamaTugas">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtNamaTugasActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="txtMatkul">
     </Component>
@@ -428,6 +431,9 @@
           </StringArray>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtsmatkulActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="SEARCH">
       <Properties>
