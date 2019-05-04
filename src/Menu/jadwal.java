@@ -5,7 +5,6 @@
  */
 package Menu;
 
-import Tampilan.MainMenu;
 import java.awt.HeadlessException;
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -345,9 +344,10 @@ public class jadwal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnupdateActionPerformed
 
     private void btnexitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnexitActionPerformed
-        dispose();
-        MainMenu n = new MainMenu();
-        n.setVisible(true);
+        System.exit(0);
+//        dispose();
+//        MainMenu n = new MainMenu();
+//        n.setVisible(true);
                   
     }//GEN-LAST:event_btnexitActionPerformed
 
