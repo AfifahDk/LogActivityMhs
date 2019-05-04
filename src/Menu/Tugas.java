@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package Menu;
-import Tampilan.MainMenu;
+
 import java.awt.HeadlessException;
 import java.sql.Connection;
 import java.sql.JDBCType;
@@ -392,9 +392,9 @@ public class Tugas extends javax.swing.JFrame {
 
     private void btExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btExitActionPerformed
         // TODO add your handling code here:
-        dispose();
-        MainMenu n = new MainMenu();
-        n.setVisible(true);
+        //dispose();
+        //MainMenu n = new MainMenu();
+        //n.setVisible(true);
     }//GEN-LAST:event_btExitActionPerformed
 
     private void btCheckActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCheckActionPerformed
