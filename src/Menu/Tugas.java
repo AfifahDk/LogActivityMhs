@@ -213,6 +213,12 @@ public class Tugas extends javax.swing.JFrame {
             }
         });
 
+        txtNamaTugas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNamaTugasActionPerformed(evt);
+            }
+        });
+
         cbHari.setFont(new java.awt.Font("Comic Sans MS", 0, 11)); // NOI18N
         cbHari.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "SENIN", "SELASA", "RABU", "KAMIS", "JUMAT", "SABTU", "MINGGU" }));
 
@@ -234,6 +240,11 @@ public class Tugas extends javax.swing.JFrame {
         jLabel2.setText("*Tahun-Bulan-Tanggal Jam-Menit-Detik");
 
         txtsmatkul.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "-Mata Kuliah", "Basis Data", "DRPL", "Kewirausahaan", "PBO", "Sistem Operasi", "Strategi Algoritma", "TBFO" }));
+        txtsmatkul.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtsmatkulActionPerformed(evt);
+            }
+        });
 
         SEARCH.setFont(new java.awt.Font("Comic Sans MS", 0, 11)); // NOI18N
         SEARCH.setText("SEARCH");
@@ -248,7 +259,7 @@ public class Tugas extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(25, 25, 25)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 651, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -275,24 +286,26 @@ public class Tugas extends javax.swing.JFrame {
                                                 .addGap(27, 27, 27)
                                                 .addComponent(btGanti)))))
                                 .addGap(39, 39, 39)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
                                         .addGap(54, 54, 54)
                                         .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addGroup(layout.createSequentialGroup()
-                                            .addComponent(btSave)
-                                            .addGap(39, 39, 39)
-                                            .addComponent(btDelete)
-                                            .addGap(109, 109, 109))
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(txtWaktu, javax.swing.GroupLayout.DEFAULT_SIZE, 218, Short.MAX_VALUE)
-                                            .addComponent(cbHari, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(txtNoTugas)
-                                            .addComponent(txtNamaTugas)
-                                            .addComponent(txtMatkul))))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btExit))))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(btSave)
+                                                .addGap(39, 39, 39)
+                                                .addComponent(btDelete)
+                                                .addGap(109, 109, 109))
+                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                .addComponent(txtWaktu, javax.swing.GroupLayout.DEFAULT_SIZE, 218, Short.MAX_VALUE)
+                                                .addComponent(cbHari, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(txtNoTugas)
+                                                .addComponent(txtNamaTugas)
+                                                .addComponent(txtMatkul)))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(btExit)
+                                        .addGap(12, 12, 12))))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(295, 295, 295)
                         .addComponent(jLabel1)))
@@ -432,6 +445,14 @@ public class Tugas extends javax.swing.JFrame {
         String waktu = tugas.getValueAt(baris,4).toString();
         txtWaktu.setText(waktu);
     }//GEN-LAST:event_tugasMouseClicked
+
+    private void txtNamaTugasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNamaTugasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNamaTugasActionPerformed
+
+    private void txtsmatkulActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtsmatkulActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtsmatkulActionPerformed
      
     /**
      * @param args the command line arguments

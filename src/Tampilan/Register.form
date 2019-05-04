@@ -44,8 +44,14 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
+<<<<<<< HEAD
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+=======
                   <Component id="jLabel1" min="-2" pref="334" max="-2" attributes="0"/>
                   <EmptySpace min="-2" max="-2" attributes="0"/>
+>>>>>>> b7572ad6da949b5c70fd336ed377a611efe59211
                   <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -54,7 +60,15 @@
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Component id="jPanel2" max="32767" attributes="0"/>
+<<<<<<< HEAD
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="jLabel1" min="-2" pref="373" max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
+              </Group>
+=======
               <Component id="jLabel1" alignment="0" max="32767" attributes="0"/>
+>>>>>>> b7572ad6da949b5c70fd336ed377a611efe59211
           </Group>
         </DimensionLayout>
       </Layout>
@@ -238,9 +252,14 @@
         <Component class="javax.swing.JLabel" name="jLabel1">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+<<<<<<< HEAD
+              <Image iconType="3" name="/Tampilan/icon/c431bbc35c698a8de1bf634948ff29a8.jpg"/>
+            </Property>
+=======
               <Image iconType="3" name="/Tampilan/be5feb60f77382993f03e6225fab82fc.jpg"/>
             </Property>
             <Property name="text" type="java.lang.String" value="jLabel1"/>
+>>>>>>> b7572ad6da949b5c70fd336ed377a611efe59211
           </Properties>
         </Component>
       </SubComponents>
