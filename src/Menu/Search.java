@@ -5,17 +5,46 @@
  */
 package Menu;
 
+import java.sql.Connection;
+import java.sql.SQLException;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author Arimbi
  */
 public class Search extends javax.swing.JFrame {
 
+        private void tampilkan_data(){
+           DefaultTableModel model = new DefaultTableModel(); 
+           model.addColumn("No.");
+           model.addColumn("Nama Tugas");
+           model.addColumn("Nama Matkul");
+           model.addColumn("Hari");
+           model.addColumn("Waktu pengumpulan");
+           
+        try{
+            String sql = "select * from tugas";
+            java.sql.Connection con = (Connection)konek.konekDB();
+            java.sql.Statement stm = con.createStatement();
+            java.sql.ResultSet res = stm.executeQuery(sql);
+            
+            while(res.next()){
+                model.addRow(new Object[] {res.getString(1),res.getString(2),res.getString(3),res.getString(4),res.getString(5)});   
+            }
+            tugas.setModel(model);
+            
+        }catch (SQLException e){
+            System.out.println("Error : " + e.getMessage());
+        }
+
+    }
     /**
      * Creates new form Search
      */
     public Search() {
         initComponents();
+        tampilkan_data();
     }
 
     /**
@@ -27,22 +56,45 @@ public class Search extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tugas = new javax.swing.JTable();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        tugas.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(tugas);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 700, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(372, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 278, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 408, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 11, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    
+    
     /**
      * @param args the command line arguments
      */
@@ -79,5 +131,7 @@ public class Search extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable tugas;
     // End of variables declaration//GEN-END:variables
 }
