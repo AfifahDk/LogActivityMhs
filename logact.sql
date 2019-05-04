@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 29 Apr 2019 pada 11.32
+-- Waktu pembuatan: 04 Bulan Mei 2019 pada 12.27
 -- Versi server: 10.1.38-MariaDB
 -- Versi PHP: 7.3.3
 
@@ -43,7 +43,7 @@ CREATE TABLE `jadwal` (
 --
 
 INSERT INTO `jadwal` (`no_jadwal`, `nama_jadwal`, `hari`, `mata_kuliah`, `ruang`, `waktu_mulai`, `waktu_selesai`) VALUES
-(1, 'tubes', 'SELASA', 'pbo', 'e102', '09.00', '11.40');
+(2, 'semester4', 'SENIN', 'pbo', 'd102', '09.00', '11.00');
 
 -- --------------------------------------------------------
 
@@ -84,6 +84,13 @@ CREATE TABLE `tugas` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
+-- Dumping data untuk tabel `tugas`
+--
+
+INSERT INTO `tugas` (`no_tugas`, `nama_tugas`, `mata_kuliah`, `hari_pengumpulan`, `waktu_pengumpulan`) VALUES
+(1, 'asd', 'pbo', 'SENIN', '09.00');
+
+--
 -- Indexes for dumped tables
 --
 
@@ -97,19 +104,32 @@ ALTER TABLE `jadwal`
 -- Indeks untuk tabel `login`
 --
 ALTER TABLE `login`
-  ADD PRIMARY KEY (`password`);
+  ADD PRIMARY KEY (`username`),
+  ADD UNIQUE KEY `password` (`password`);
 
 --
 -- Indeks untuk tabel `register`
 --
 ALTER TABLE `register`
-  ADD PRIMARY KEY (`password`);
+  ADD PRIMARY KEY (`username`),
+  ADD UNIQUE KEY `password` (`password`);
 
 --
 -- Indeks untuk tabel `tugas`
 --
 ALTER TABLE `tugas`
   ADD PRIMARY KEY (`no_tugas`);
+
+--
+-- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
+--
+
+--
+-- Ketidakleluasaan untuk tabel `login`
+--
+ALTER TABLE `login`
+  ADD CONSTRAINT `login_ibfk_1` FOREIGN KEY (`password`) REFERENCES `register` (`password`),
+  ADD CONSTRAINT `login_ibfk_2` FOREIGN KEY (`username`) REFERENCES `register` (`username`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
