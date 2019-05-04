@@ -5,6 +5,7 @@
  */
 package Menu;
 
+import Tabel.tmplJadwal;
 import java.awt.HeadlessException;
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -95,6 +96,7 @@ public class jadwal extends javax.swing.JFrame {
         btninsert = new javax.swing.JButton();
         btnexit = new javax.swing.JButton();
         cbsemester = new javax.swing.JComboBox<>();
+        btnshow = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -208,6 +210,14 @@ public class jadwal extends javax.swing.JFrame {
             }
         });
 
+        btnshow.setFont(new java.awt.Font("Comic Sans MS", 1, 11)); // NOI18N
+        btnshow.setText("show");
+        btnshow.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnshowActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -251,13 +261,15 @@ public class jadwal extends javax.swing.JFrame {
                                 .addComponent(jScrollPane1)
                                 .addGroup(layout.createSequentialGroup()
                                     .addComponent(btnclear, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(69, 69, 69)
+                                    .addGap(52, 52, 52)
                                     .addComponent(btnupdate, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 78, Short.MAX_VALUE)
+                                    .addGap(52, 52, 52)
                                     .addComponent(btndelete, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(80, 80, 80)
+                                    .addGap(59, 59, 59)
                                     .addComponent(btninsert, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(74, 74, 74)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 71, Short.MAX_VALUE)
+                                    .addComponent(btnshow)
+                                    .addGap(45, 45, 45)
                                     .addComponent(btnexit)))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(294, 294, 294)
@@ -306,7 +318,8 @@ public class jadwal extends javax.swing.JFrame {
                     .addComponent(btnupdate)
                     .addComponent(btnexit)
                     .addComponent(btninsert)
-                    .addComponent(btndelete))
+                    .addComponent(btndelete)
+                    .addComponent(btnshow))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(35, 35, 35))
@@ -417,6 +430,13 @@ public class jadwal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_cbsemesterActionPerformed
 
+    private void btnshowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnshowActionPerformed
+        // TODO add your handling code here:
+        dispose();
+        tmplJadwal n = new tmplJadwal();
+        n.setVisible(true);
+    }//GEN-LAST:event_btnshowActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -457,6 +477,7 @@ public class jadwal extends javax.swing.JFrame {
     private javax.swing.JButton btndelete;
     private javax.swing.JButton btnexit;
     private javax.swing.JButton btninsert;
+    private javax.swing.JButton btnshow;
     private javax.swing.JButton btnupdate;
     private javax.swing.JComboBox<String> cbhari;
     private javax.swing.JComboBox<String> cbsemester;
