@@ -5,7 +5,6 @@
  */
 package Menu;
 
-import Tabel.tmplJadwal;
 import java.awt.HeadlessException;
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -32,36 +31,9 @@ public class jadwal extends javax.swing.JFrame {
         txtwaktuselesai.setText(null);
         
     }
-    private void tampil(){
-        DefaultTableModel model = new DefaultTableModel();
-        model.addColumn("no");
-        model.addColumn("semester");
-        model.addColumn("hari");
-        model.addColumn("mata kuliah / kegiatan");
-        model.addColumn("ruangan / tempat");
-        model.addColumn("waktu mulai");
-        model.addColumn("waktu selesai");
-        
-        try{
-            String sql = "select * from jadwal";
-            java.sql.Connection con = (Connection)konek.konekDB();
-            java.sql.Statement stm = con.createStatement();
-            java.sql.ResultSet res = stm.executeQuery(sql);
-            
-            while(res.next()){
-                model.addRow(new Object[] {res.getString(1),res.getString(2),res.getString(3),res.getString(4),res.getString(5),res.getString(6),res.getString(7)});   
-            }
-            tabeljadwal.setModel(model);
-            
-        }catch (SQLException e){
-            System.out.println("Error : " + e.getMessage());
-        }
-
-    }
     
     public jadwal() {
         initComponents();
-        tampil();
         kosong();
     }
 
@@ -88,8 +60,6 @@ public class jadwal extends javax.swing.JFrame {
         txtwaktuselesai = new javax.swing.JTextField();
         txtruangan = new javax.swing.JTextField();
         cbhari = new javax.swing.JComboBox<>();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        tabeljadwal = new javax.swing.JTable();
         btnclear = new javax.swing.JButton();
         btnupdate = new javax.swing.JButton();
         btndelete = new javax.swing.JButton();
@@ -143,25 +113,6 @@ public class jadwal extends javax.swing.JFrame {
                 cbhariActionPerformed(evt);
             }
         });
-
-        tabeljadwal.setFont(new java.awt.Font("Comic Sans MS", 0, 11)); // NOI18N
-        tabeljadwal.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        tabeljadwal.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tabeljadwalMouseClicked(evt);
-            }
-        });
-        jScrollPane1.setViewportView(tabeljadwal);
 
         btnclear.setFont(new java.awt.Font("Comic Sans MS", 1, 12)); // NOI18N
         btnclear.setText("clear");
@@ -257,20 +208,17 @@ public class jadwal extends javax.swing.JFrame {
                             .addGap(0, 0, Short.MAX_VALUE))
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                             .addGap(21, 21, 21)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jScrollPane1)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(btnclear, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(52, 52, 52)
-                                    .addComponent(btnupdate, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(52, 52, 52)
-                                    .addComponent(btndelete, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(59, 59, 59)
-                                    .addComponent(btninsert, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 71, Short.MAX_VALUE)
-                                    .addComponent(btnshow)
-                                    .addGap(45, 45, 45)
-                                    .addComponent(btnexit)))))
+                            .addComponent(btnclear, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(52, 52, 52)
+                            .addComponent(btnupdate, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(52, 52, 52)
+                            .addComponent(btndelete, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(59, 59, 59)
+                            .addComponent(btninsert, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 71, Short.MAX_VALUE)
+                            .addComponent(btnshow)
+                            .addGap(45, 45, 45)
+                            .addComponent(btnexit)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(294, 294, 294)
                         .addComponent(jLabel1)))
@@ -320,9 +268,7 @@ public class jadwal extends javax.swing.JFrame {
                     .addComponent(btninsert)
                     .addComponent(btndelete)
                     .addComponent(btnshow))
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(35, 35, 35))
+                .addGap(146, 146, 146))
         );
 
         pack();
@@ -352,7 +298,7 @@ public class jadwal extends javax.swing.JFrame {
         }catch (HeadlessException | SQLException e){
             JOptionPane.showMessageDialog(this, e.getMessage());
         }
-        tampil();
+ //       tampil();
         kosong();
     }//GEN-LAST:event_btnupdateActionPerformed
 
@@ -377,38 +323,12 @@ public class jadwal extends javax.swing.JFrame {
             java.sql.PreparedStatement pstm = con.prepareStatement(sql);
             pstm.execute();
             JOptionPane.showMessageDialog(null, "Proses insert data berhasil..");
-            tampil();
+ //           tampil();
             kosong();
         }catch (HeadlessException | SQLException e){
             JOptionPane.showMessageDialog(this, e.getMessage());
         }
     }//GEN-LAST:event_btninsertActionPerformed
-
-    private void tabeljadwalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabeljadwalMouseClicked
-        // TODO add your handling code here:
-        int baris = tabeljadwal.rowAtPoint(evt.getPoint());
-        
-        String no = tabeljadwal.getValueAt(baris, 0).toString();
-        txtnojadwal.setText(no);
-        
-        String semester = tabeljadwal.getValueAt(baris, 1).toString();
-        cbsemester.setSelectedItem(semester);
-        
-        String hari = tabeljadwal.getValueAt(baris, 2).toString();
-        cbhari.setSelectedItem(hari);
-        
-        String mk = tabeljadwal.getValueAt(baris, 3).toString();
-        txtmatakuliah.setText(mk);
-        
-        String rng = tabeljadwal.getValueAt(baris, 4).toString();
-        txtruangan.setText(rng);
-        
-        String wm = tabeljadwal.getValueAt(baris, 5).toString();
-        txtwaktumulai.setText(wm);
-        
-        String ws = tabeljadwal.getValueAt(baris, 6).toString();
-        txtwaktuselesai.setText(ws);
-    }//GEN-LAST:event_tabeljadwalMouseClicked
 
     private void btndeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btndeleteActionPerformed
         // TODO add your handling code here:
@@ -422,7 +342,7 @@ public class jadwal extends javax.swing.JFrame {
         }catch (HeadlessException | SQLException e){
             JOptionPane.showMessageDialog(this, e.getMessage());
         }     
-        tampil();
+ //       tampil();
         kosong();
     }//GEN-LAST:event_btndeleteActionPerformed
 
@@ -489,8 +409,6 @@ public class jadwal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable tabeljadwal;
     private javax.swing.JTextField txtmatakuliah;
     private javax.swing.JTextField txtnojadwal;
     private javax.swing.JTextField txtruangan;

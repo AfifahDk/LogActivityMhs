@@ -3,10 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Tabel;
+package Menu;
 
-import Menu.jadwal;
-import Menu.konek;
+
 import java.sql.Connection;
 import java.sql.SQLException;
 import javax.swing.table.DefaultTableModel;
@@ -20,17 +19,6 @@ public class tmplJadwal extends javax.swing.JFrame {
     /**
      * Creates new form tmplJadwal
      */
-    private void kosong(){
-        txtnojadwal.setEditable(true);
-        txtnojadwal.setText(null);
-        cbsemester.setSelectedItem(this);
-        cbhari.setSelectedItem(this);
-        txtmatakuliah.setText(null);
-        txtruangan.setText(null);
-        txtwaktumulai.setText(null);
-        txtwaktuselesai.setText(null);
-        
-    }
     private void tampil(){
         DefaultTableModel model = new DefaultTableModel();
         model.addColumn("no");
@@ -60,7 +48,6 @@ public class tmplJadwal extends javax.swing.JFrame {
     public tmplJadwal() {
         initComponents();
         tampil();
-        kosong();
     }
 
     /**
