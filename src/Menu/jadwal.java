@@ -24,7 +24,7 @@ public class jadwal extends javax.swing.JFrame {
     private void kosong(){
         txtnojadwal.setEditable(true);
         txtnojadwal.setText(null);
-        txtnamajadwal.setText(null);
+        cbsemester.setSelectedItem(this);
         cbhari.setSelectedItem(this);
         txtmatakuliah.setText(null);
         txtruangan.setText(null);
@@ -82,7 +82,6 @@ public class jadwal extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        txtnamajadwal = new javax.swing.JTextField();
         txtnojadwal = new javax.swing.JTextField();
         txtmatakuliah = new javax.swing.JTextField();
         txtwaktumulai = new javax.swing.JTextField();
@@ -96,6 +95,7 @@ public class jadwal extends javax.swing.JFrame {
         btndelete = new javax.swing.JButton();
         btninsert = new javax.swing.JButton();
         btnexit = new javax.swing.JButton();
+        cbsemester = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -112,7 +112,7 @@ public class jadwal extends javax.swing.JFrame {
         jLabel4.setText("HARI");
 
         jLabel5.setFont(new java.awt.Font("Comic Sans MS", 0, 11)); // NOI18N
-        jLabel5.setText("MATA KULIAH");
+        jLabel5.setText("MATA KULIAH / KEGIATAN");
 
         jLabel6.setFont(new java.awt.Font("Comic Sans MS", 0, 11)); // NOI18N
         jLabel6.setText("RUANGAN / TEMPAT");
@@ -122,12 +122,6 @@ public class jadwal extends javax.swing.JFrame {
 
         jLabel8.setFont(new java.awt.Font("Comic Sans MS", 0, 11)); // NOI18N
         jLabel8.setText("WAKTU SELESAI");
-
-        txtnamajadwal.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtnamajadwalActionPerformed(evt);
-            }
-        });
 
         txtnojadwal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -208,6 +202,13 @@ public class jadwal extends javax.swing.JFrame {
             }
         });
 
+        cbsemester.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "semester 1", "semester 2", "semester 3", "semester 4", "semester 5", "semester 6", "semester 7", "semester 8", " " }));
+        cbsemester.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbsemesterActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -218,7 +219,7 @@ public class jadwal extends javax.swing.JFrame {
                         .addGroup(layout.createSequentialGroup()
                             .addContainerGap()
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGroup(layout.createSequentialGroup()
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(jLabel7)
                                         .addComponent(jLabel8)
@@ -229,32 +230,35 @@ public class jadwal extends javax.swing.JFrame {
                                         .addComponent(txtruangan, javax.swing.GroupLayout.PREFERRED_SIZE, 312, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(txtmatakuliah, javax.swing.GroupLayout.PREFERRED_SIZE, 312, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(txtwaktumulai, javax.swing.GroupLayout.PREFERRED_SIZE, 312, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(txtwaktuselesai, javax.swing.GroupLayout.PREFERRED_SIZE, 312, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGap(0, 0, Short.MAX_VALUE))
+                                        .addComponent(txtwaktuselesai, javax.swing.GroupLayout.PREFERRED_SIZE, 312, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addGroup(layout.createSequentialGroup()
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(jLabel2)
                                         .addComponent(jLabel3)
                                         .addComponent(jLabel4))
-                                    .addGap(156, 156, 156)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(txtnojadwal, javax.swing.GroupLayout.DEFAULT_SIZE, 312, Short.MAX_VALUE)
-                                        .addComponent(cbhari, 0, 312, Short.MAX_VALUE)
-                                        .addComponent(txtnamajadwal))
-                                    .addGap(254, 254, 254))))
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addGap(192, 192, 192)
+                                            .addComponent(cbhari, javax.swing.GroupLayout.PREFERRED_SIZE, 312, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                .addComponent(txtnojadwal, javax.swing.GroupLayout.DEFAULT_SIZE, 312, Short.MAX_VALUE)
+                                                .addComponent(cbsemester, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
+                            .addGap(0, 0, Short.MAX_VALUE))
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                             .addGap(21, 21, 21)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(jScrollPane1)
                                 .addGroup(layout.createSequentialGroup()
                                     .addComponent(btnclear, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(97, 97, 97)
+                                    .addGap(69, 69, 69)
                                     .addComponent(btnupdate, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(115, 115, 115)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 78, Short.MAX_VALUE)
                                     .addComponent(btndelete, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 104, Short.MAX_VALUE)
+                                    .addGap(80, 80, 80)
                                     .addComponent(btninsert, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(83, 83, 83)
+                                    .addGap(74, 74, 74)
                                     .addComponent(btnexit)))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(294, 294, 294)
@@ -273,7 +277,7 @@ public class jadwal extends javax.swing.JFrame {
                 .addGap(14, 14, 14)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(txtnamajadwal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cbsemester, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(16, 16, 16)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cbhari, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -320,10 +324,6 @@ public class jadwal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_cbhariActionPerformed
 
-    private void txtnamajadwalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtnamajadwalActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtnamajadwalActionPerformed
-
     private void txtwaktuselesaiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtwaktuselesaiActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtwaktuselesaiActionPerformed
@@ -331,7 +331,7 @@ public class jadwal extends javax.swing.JFrame {
     private void btnupdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnupdateActionPerformed
         // TODO add your handling code here:
         try{
-            String sql = "update jadwal set no_jadwal = '"+txtnojadwal.getText()+"', nama_jadwal = '"+txtnamajadwal.getText()+"', hari = '"+cbhari.getSelectedItem()+"', mata_kuliah = '"+txtmatakuliah.getText()+"', ruang = '"+txtruangan.getText()+"', waktu_mulai = '"+txtwaktumulai.getText()+"', waktu_selesai = '"+txtwaktuselesai.getText()+"' where no_jadwal = '"+txtnojadwal.getText()+"'";
+            String sql = "update jadwal set no_jadwal = '"+txtnojadwal.getText()+"', semester = '"+cbsemester.getSelectedItem()+"', hari = '"+cbhari.getSelectedItem()+"', mata_kuliah = '"+txtmatakuliah.getText()+"', ruang = '"+txtruangan.getText()+"', waktu_mulai = '"+txtwaktumulai.getText()+"', waktu_selesai = '"+txtwaktuselesai.getText()+"' where no_jadwal = '"+txtnojadwal.getText()+"'";
             java.sql.Connection con = (Connection)konek.konekDB();
             java.sql.PreparedStatement pstm = con.prepareStatement(sql);
             pstm.execute();
@@ -359,7 +359,7 @@ public class jadwal extends javax.swing.JFrame {
     private void btninsertActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btninsertActionPerformed
         // TODO add your handling code here:
         try{
-            String sql = "insert into jadwal values ('"+txtnojadwal.getText()+"','"+txtnamajadwal.getText()+"','"+cbhari.getSelectedItem()+"','"+txtmatakuliah.getText()+"','"+txtruangan.getText()+"','"+txtwaktumulai.getText()+"','"+txtwaktuselesai.getText()+"')";
+            String sql = "insert into jadwal values ('"+txtnojadwal.getText()+"','"+cbsemester.getSelectedItem()+"','"+cbhari.getSelectedItem()+"','"+txtmatakuliah.getText()+"','"+txtruangan.getText()+"','"+txtwaktumulai.getText()+"','"+txtwaktuselesai.getText()+"')";
             java.sql.Connection con = (Connection)konek.konekDB();
             java.sql.PreparedStatement pstm = con.prepareStatement(sql);
             pstm.execute();
@@ -378,8 +378,8 @@ public class jadwal extends javax.swing.JFrame {
         String no = tabeljadwal.getValueAt(baris, 0).toString();
         txtnojadwal.setText(no);
         
-        String nama = tabeljadwal.getValueAt(baris, 1).toString();
-        txtnamajadwal.setText(nama);
+        String semester = tabeljadwal.getValueAt(baris, 1).toString();
+        cbsemester.setSelectedItem(semester);
         
         String hari = tabeljadwal.getValueAt(baris, 2).toString();
         cbhari.setSelectedItem(hari);
@@ -412,6 +412,10 @@ public class jadwal extends javax.swing.JFrame {
         tampil();
         kosong();
     }//GEN-LAST:event_btndeleteActionPerformed
+
+    private void cbsemesterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbsemesterActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbsemesterActionPerformed
 
     /**
      * @param args the command line arguments
@@ -455,6 +459,7 @@ public class jadwal extends javax.swing.JFrame {
     private javax.swing.JButton btninsert;
     private javax.swing.JButton btnupdate;
     private javax.swing.JComboBox<String> cbhari;
+    private javax.swing.JComboBox<String> cbsemester;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -466,7 +471,6 @@ public class jadwal extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tabeljadwal;
     private javax.swing.JTextField txtmatakuliah;
-    private javax.swing.JTextField txtnamajadwal;
     private javax.swing.JTextField txtnojadwal;
     private javax.swing.JTextField txtruangan;
     private javax.swing.JTextField txtwaktumulai;
