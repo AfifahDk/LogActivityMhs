@@ -37,7 +37,7 @@ public class jadwal extends javax.swing.JFrame {
         model.addColumn("no");
         model.addColumn("semester");
         model.addColumn("hari");
-        model.addColumn("mata kuliah");
+        model.addColumn("mata kuliah / kegiatan");
         model.addColumn("ruangan / tempat");
         model.addColumn("waktu mulai");
         model.addColumn("waktu selesai");
