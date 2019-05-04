@@ -88,7 +88,7 @@ public class jadwal extends javax.swing.JFrame {
         txtwaktumulai = new javax.swing.JTextField();
         txtwaktuselesai = new javax.swing.JTextField();
         txtruangan = new javax.swing.JTextField();
-        cbhari = new javax.swing.JComboBox<>();
+        cbhari = new javax.swing.JComboBox<String>();
         jScrollPane1 = new javax.swing.JScrollPane();
         tabeljadwal = new javax.swing.JTable();
         btnclear = new javax.swing.JButton();
@@ -142,7 +142,7 @@ public class jadwal extends javax.swing.JFrame {
         });
 
         cbhari.setFont(new java.awt.Font("Comic Sans MS", 0, 11)); // NOI18N
-        cbhari.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SENIN", "SELASA", "RABU", "KAMIS", "JUMAT", "SABTU" }));
+        cbhari.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "SENIN", "SELASA", "RABU", "KAMIS", "JUMAT", "SABTU" }));
         cbhari.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbhariActionPerformed(evt);
@@ -346,7 +346,10 @@ public class jadwal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnupdateActionPerformed
 
     private void btnexitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnexitActionPerformed
-        System.exit(0);
+        dispose();
+        MainMenu n = new MainMenu();
+        n.setVisible(true);
+                  
     }//GEN-LAST:event_btnexitActionPerformed
 
     private void btnclearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnclearActionPerformed
