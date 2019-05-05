@@ -7,6 +7,7 @@ package View;
 import Menu.konek;
 import static Menu.konek.konekDB;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -23,6 +24,7 @@ public class Register extends javax.swing.JFrame {
     public static Statement stm;
     ResultSet rs;
     String sql;
+    private Object koneksi;
     
     private void kosong(){
         txtEmail.setText("");
@@ -283,24 +285,38 @@ public class Register extends javax.swing.JFrame {
     }//GEN-LAST:event_jCheckBox1ActionPerformed
 
     private void btnSignupActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSignupActionPerformed
-       try {
-            if (txtConfirmPass.getPassword().equals(txtPassword.getPassword()) &&  txtEmail.getText().length()>= 2 && txtNama.getText().length()>= 2 && txtUsername.getText().length()>= 2 ) {
-
-            String sql = "insert into Register values ('"+txtEmail.getText()+"','"+txtNama.getText()+"','"+txtUsername.getText()+"','"+String.valueOf(txtPassword.getPassword())+"','"+String.valueOf( txtConfirmPass.getPassword())+"')";
-            java.sql.Connection con = (Connection)konek.konekDB();
-            java.sql.PreparedStatement pstm = con.prepareStatement(sql);
-            pstm.execute();
-                {
-                    JOptionPane.showMessageDialog(null, "Save Succesfull");
-                }
-                kosong();
-            } else {
-                JOptionPane.showMessageDialog(null, "Access Denied");
-                kosong();
-            };
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(this, "ERROR");
-        } 
+    String Email = txtEmail.getText();
+    String Nama = txtNama.getText();
+    String Username = txtUsername.getText();
+    String Password =String.valueOf(txtPassword.getPassword());
+    String Confirm_Password = String.valueOf(txtConfirmPass.getPassword());
+    
+    if(Username.equals("")){
+         JOptionPane.showMessageDialog(null, "Add a Username");
+    }
+    else if(Password.equals("")){
+        JOptionPane.showMessageDialog(null, "Add a Password");
+    }
+    else if(!Password.equals(Confirm_Password)){
+        JOptionPane.showMessageDialog(null, "Retype The Password Again");
+    }
+    else{
+    PreparedStatement pstm;
+    String sql = "INSERT INTO `register`(`email`, `nama_lengkap`, `username`, `password`) VALUES (?,?,?,?)";
+        try {
+            pstm= konek.konekDB().prepareStatement(sql);
+            pstm.setString(1, Email);
+            pstm.setString(2, Nama);
+            pstm.setString(3, Username);
+            pstm.setString(4, Password);
+            
+            if(pstm.executeUpdate()>0){
+                JOptionPane.showMessageDialog(null, "New User Add");
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Register.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
     }//GEN-LAST:event_btnSignupActionPerformed
 
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
@@ -310,11 +326,11 @@ public class Register extends javax.swing.JFrame {
         } catch (SQLException ex) {
             Logger.getLogger(Register.class.getName()).log(Level.SEVERE, null, ex);
         }
-lgf.setVisible(true);
-lgf.pack();
-lgf.setLocationRelativeTo(null);
-lgf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-this.dispose();
+    lgf.setVisible(true);
+    lgf.pack();
+    lgf.setLocationRelativeTo(null);
+    lgf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    this.dispose();
     
     }//GEN-LAST:event_btnLoginActionPerformed
 
