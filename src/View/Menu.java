@@ -5,6 +5,9 @@
  */
 package View;
 
+import Menu.Tugas;
+import Menu.jadwal;
+
 /**
  *
  * @author acer
@@ -41,10 +44,20 @@ public class Menu extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(248, 239, 186));
 
         jLabel1.setText("JADWAL");
+        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel1MouseClicked(evt);
+            }
+        });
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Tampilan/4068b767a33f081f176a8c90f90cc92e.jpg"))); // NOI18N
 
         jButton1.setText("HOME");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -73,6 +86,11 @@ public class Menu extends javax.swing.JFrame {
         jPanel3.setBackground(new java.awt.Color(248, 239, 186));
 
         jLabel2.setText("TUGAS");
+        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel2MouseClicked(evt);
+            }
+        });
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Tampilan/c431bbc35c698a8de1bf634948ff29a8.jpg"))); // NOI18N
 
@@ -127,6 +145,27 @@ public class Menu extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
+        dispose();
+        jadwal n = new jadwal();
+        n.setVisible(true);
+        
+// TODO add your handling code here:
+    }//GEN-LAST:event_jLabel1MouseClicked
+
+    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
+        dispose();
+        Tugas n = new Tugas();
+        n.setVisible(true);// TODO add your handling code here:
+    }//GEN-LAST:event_jLabel2MouseClicked
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        dispose();
+        Home n = new Home();
+        n.setVisible(true);
+// TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
