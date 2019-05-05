@@ -6,6 +6,7 @@
 package View;
 import Menu.konek;
 import static Menu.konek.konekDB;
+import java.awt.Frame;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -66,6 +67,7 @@ public class Login extends javax.swing.JFrame {
         jPanel3.setBackground(new java.awt.Color(89, 98, 117));
 
         jLabel2.setFont(new java.awt.Font("Britannic Bold", 0, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("LOG ACTIVITY MAHASISWA");
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -148,12 +150,8 @@ public class Login extends javax.swing.JFrame {
                     .addComponent(btnCancel))
                 .addGap(49, 49, 49)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel5))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnSignup)))
+                    .addComponent(jLabel5)
+                    .addComponent(btnSignup))
                 .addGap(51, 51, 51))
         );
 
@@ -200,14 +198,18 @@ public class Login extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSignupActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSignupActionPerformed
-        dispose();
         Register n = null;
         try {
-            n = new Register();
+        n = new Register();
         } catch (SQLException ex) {
             Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
         }
-        n.setVisible(true);      
+         n.setVisible(true);
+         n.pack();
+         n.setLocationRelativeTo(null);
+         n.setExtendedState(Home.MAXIMIZED_HORIZ);
+                
+                this.dispose();    
             // TODO add your handling code here:
     }//GEN-LAST:event_btnSignupActionPerformed
 
@@ -229,9 +231,14 @@ public class Login extends javax.swing.JFrame {
             
             if(rs.next()){
                 JOptionPane.showMessageDialog(null, "Login Success");
-                dispose();
                 Home n = new Home();
                 n.setVisible(true);
+                n.pack();
+                n.setLocationRelativeTo(null);
+                n.setExtendedState(Login.MAXIMIZED_BOTH);
+                n.jLabel6.setText("Welcome < "+Username+" >");
+                
+                this.dispose();
             }
             else{
                  JOptionPane.showMessageDialog(null, "username or password is incorrect");

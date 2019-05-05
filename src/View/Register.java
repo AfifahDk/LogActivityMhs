@@ -350,11 +350,13 @@ public class Register extends javax.swing.JFrame {
         } catch (SQLException ex) {
             Logger.getLogger(Register.class.getName()).log(Level.SEVERE, null, ex);
         }
-    lgf.setVisible(true);
-    lgf.pack();
-    lgf.setLocationRelativeTo(null);
-    lgf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    this.dispose();
+                lgf.setVisible(true);
+                lgf.pack();
+                lgf.setLocationRelativeTo(null);
+                lgf.setExtendedState(Home.MAXIMIZED_HORIZ);
+                
+                this.dispose();
+  
     
     }//GEN-LAST:event_btnLoginActionPerformed
 
