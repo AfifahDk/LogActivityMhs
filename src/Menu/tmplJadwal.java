@@ -69,6 +69,7 @@ public class tmplJadwal extends javax.swing.JFrame {
         setBackground(new java.awt.Color(0, 102, 51));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        tbljadwal.setFont(new java.awt.Font("Comic Sans MS", 0, 11)); // NOI18N
         tbljadwal.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -85,6 +86,7 @@ public class tmplJadwal extends javax.swing.JFrame {
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 860, 93));
 
         btnback.setBackground(new java.awt.Color(204, 204, 255));
+        btnback.setFont(new java.awt.Font("Comic Sans MS", 1, 11)); // NOI18N
         btnback.setText("back");
         btnback.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -93,6 +95,7 @@ public class tmplJadwal extends javax.swing.JFrame {
         });
         getContentPane().add(btnback, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
+        btnsearch.setFont(new java.awt.Font("Comic Sans MS", 1, 11)); // NOI18N
         btnsearch.setText("search");
         btnsearch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
