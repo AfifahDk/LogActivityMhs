@@ -300,6 +300,10 @@ public class Register extends javax.swing.JFrame {
     else if(!Password.equals(Confirm_Password)){
         JOptionPane.showMessageDialog(null, "Retype The Password Again");
     }
+    else if(checkUsername(Username)){
+        JOptionPane.showMessageDialog(null, "This Username Already Exist");
+        
+    }
     else{
     PreparedStatement pstm;
     String sql = "INSERT INTO `register`(`email`, `nama_lengkap`, `username`, `password`) VALUES (?,?,?,?)";
@@ -319,6 +323,26 @@ public class Register extends javax.swing.JFrame {
     }
     }//GEN-LAST:event_btnSignupActionPerformed
 
+    public boolean checkUsername(String Username){
+      PreparedStatement pstm;
+      ResultSet rs; 
+      boolean checkUser = false;
+      String sql ="SELECT * FROM `register` WHERE `username` =?";
+        try {
+            pstm = konek.konekDB().prepareStatement(sql);
+            pstm.setString(1, Username);
+            rs=pstm.executeQuery();
+       
+       if(rs.next()){
+          checkUser = true; 
+        }
+        } catch (SQLException ex) {
+            Logger.getLogger(Register.class.getName()).log(Level.SEVERE, null, ex);
+        }
+       
+       return checkUser;
+    }
+    
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
     Login lgf = null;
         try {

@@ -7,6 +7,7 @@ package View;
 import Menu.konek;
 import static Menu.konek.konekDB;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -211,20 +212,34 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSignupActionPerformed
 
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
+      PreparedStatement pstm;
+      ResultSet rs;
+      String Username = txtUsername.getText();
+      String Password =String.valueOf(txtPassword.getPassword());
+      
+      String sql ="SELECT * FROM `register` WHERE `username` =? AND `password` =?";
+      
         try {
-            sql = "SELECT * FROM Login WHERE Username='"+txtUsername.getText()+"' AND Password='"+txtPassword.getPassword()+"'";
-            rs = stm.executeQuery(sql);
+            pstm = konek.konekDB().prepareStatement(sql);
+            
+            pstm.setString(1, Username);
+            pstm.setString(2, Password);
+            
+            rs = pstm.executeQuery();
+            
             if(rs.next()){
-                if(txtUsername.getText().equals(rs.getString("username")) && txtPassword.getPassword().equals(rs.getString("password"))){
-                    JOptionPane.showMessageDialog(null, "berhasil login");
-                }
-            }else{
-                    JOptionPane.showMessageDialog(null, "username atau password salah");
-                }
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(this, e.getMessage());
+                JOptionPane.showMessageDialog(null, "Login Success");
+                dispose();
+                Home n = new Home();
+                n.setVisible(true);
+            }
+            else{
+                 JOptionPane.showMessageDialog(null, "username or password is incorrect");
+            }
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
         }
-     // TODO add your handling code here:
     }//GEN-LAST:event_btnLoginActionPerformed
 
     private void btnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelActionPerformed
