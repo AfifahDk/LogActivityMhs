@@ -6,6 +6,8 @@
 package Menu;
 
 import Menu.jadwal;
+import Menu.jadwal;
+import Menu.konek;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.HashMap;
@@ -20,6 +22,32 @@ public class tmplJadwal extends javax.swing.JFrame {
     /**
      * Creates new form tmplJadwal
      */
+    private void Stampil(){
+        DefaultTableModel model = new DefaultTableModel();
+        model.addColumn("no");
+        model.addColumn("semester");
+        model.addColumn("hari");
+        model.addColumn("mata kuliah / kegiatan");
+        model.addColumn("ruangan / tempat");
+        model.addColumn("waktu mulai");
+        model.addColumn("waktu selesai");
+        
+        try{
+            String sql = "SELECT * FROM jadwal WHERE hari LIKE ('"+cbshari.getSelectedItem()+"')";
+            java.sql.Connection con = (Connection)konek.konekDB();
+            java.sql.Statement stm = con.createStatement();
+            java.sql.ResultSet res = stm.executeQuery(sql);
+            
+            while(res.next()){
+                model.addRow(new Object[] {res.getString(1),res.getString(2),res.getString(3),res.getString(4),res.getString(5),res.getString(6),res.getString(7)});   
+            }
+            tbljadwal.setModel(model);
+            
+        }catch (SQLException e){
+            System.out.println("Error : " + e.getMessage());
+        }
+
+    }
     private void tampil(){
         DefaultTableModel model = new DefaultTableModel();
         model.addColumn("no");
@@ -31,7 +59,7 @@ public class tmplJadwal extends javax.swing.JFrame {
         model.addColumn("waktu selesai");
         
         try{
-            String sql = "select * from jadwal";
+            String sql = "SELECT * FROM jadwal";
             java.sql.Connection con = (Connection)konek.konekDB();
             java.sql.Statement stm = con.createStatement();
             java.sql.ResultSet res = stm.executeQuery(sql);
@@ -48,6 +76,7 @@ public class tmplJadwal extends javax.swing.JFrame {
     }
     public tmplJadwal() {
         initComponents();
+        Stampil();
         tampil();
     }
 
@@ -64,10 +93,12 @@ public class tmplJadwal extends javax.swing.JFrame {
         tbljadwal = new javax.swing.JTable();
         btnback = new javax.swing.JButton();
         btnsearch = new javax.swing.JButton();
+        cbshari = new javax.swing.JComboBox<>();
+        btnall = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 102, 51));
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         tbljadwal.setFont(new java.awt.Font("Comic Sans MS", 0, 11)); // NOI18N
         tbljadwal.setModel(new javax.swing.table.DefaultTableModel(
@@ -83,8 +114,6 @@ public class tmplJadwal extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(tbljadwal);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 860, 93));
-
         btnback.setBackground(new java.awt.Color(204, 204, 255));
         btnback.setFont(new java.awt.Font("Comic Sans MS", 1, 11)); // NOI18N
         btnback.setText("back");
@@ -93,7 +122,6 @@ public class tmplJadwal extends javax.swing.JFrame {
                 btnbackActionPerformed(evt);
             }
         });
-        getContentPane().add(btnback, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
         btnsearch.setFont(new java.awt.Font("Comic Sans MS", 1, 11)); // NOI18N
         btnsearch.setText("search");
@@ -102,7 +130,61 @@ public class tmplJadwal extends javax.swing.JFrame {
                 btnsearchActionPerformed(evt);
             }
         });
-        getContentPane().add(btnsearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 10, -1, -1));
+
+        cbshari.setFont(new java.awt.Font("Comic Sans MS", 0, 11)); // NOI18N
+        cbshari.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SENIN", "SELASA", "RABU", "KAMIS", "JUMAT", "SABTU", "MINGGU" }));
+        cbshari.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbshariActionPerformed(evt);
+            }
+        });
+
+        btnall.setFont(new java.awt.Font("Comic Sans MS", 1, 11)); // NOI18N
+        btnall.setText("show all");
+        btnall.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnallActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setIcon(new javax.swing.ImageIcon("D:\\oal\\fbb9056a8335e34a7b9c608a379e36a7b1da06db_hq.jpg")); // NOI18N
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 860, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(10, 10, 10)
+                            .addComponent(btnback)
+                            .addGap(13, 13, 13)
+                            .addComponent(btnsearch)
+                            .addGap(18, 18, 18)
+                            .addComponent(cbshari, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(18, 18, 18)
+                            .addComponent(btnall))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 860, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnback)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(btnsearch)
+                        .addComponent(cbshari, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnall)))
+                .addGap(25, 25, 25)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(38, 38, 38)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(126, 126, 126))
+        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -116,8 +198,17 @@ public class tmplJadwal extends javax.swing.JFrame {
 
     private void btnsearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsearchActionPerformed
         // TODO add your handling code here:
-        
+        Stampil();
     }//GEN-LAST:event_btnsearchActionPerformed
+
+    private void cbshariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbshariActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbshariActionPerformed
+
+    private void btnallActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnallActionPerformed
+        // TODO add your handling code here:
+        tampil();
+    }//GEN-LAST:event_btnallActionPerformed
 
     /**
      * @param args the command line arguments
@@ -155,8 +246,11 @@ public class tmplJadwal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnall;
     private javax.swing.JButton btnback;
     private javax.swing.JButton btnsearch;
+    private javax.swing.JComboBox<String> cbshari;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tbljadwal;
     // End of variables declaration//GEN-END:variables
