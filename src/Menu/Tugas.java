@@ -408,9 +408,13 @@ public class Tugas extends javax.swing.JFrame {
 
     private void btsearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btsearchActionPerformed
         // TODO add your handling code here:
-        dispose();
         Search n = new Search();
-        n.setVisible(true);
+                n.setVisible(true);
+                n.pack();
+                n.setLocationRelativeTo(null);
+                n.setExtendedState(Home.MAXIMIZED_HORIZ);
+                
+                this.dispose();
     }//GEN-LAST:event_btsearchActionPerformed
      
     /**
