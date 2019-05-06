@@ -344,18 +344,14 @@ public class Register extends javax.swing.JFrame {
     }
     
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
-    Login lgf = null;
+        dispose();
+        Login n = null;
         try {
-            lgf = new Login();
+            n = new Login();
         } catch (SQLException ex) {
-            Logger.getLogger(Register.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Cover.class.getName()).log(Level.SEVERE, null, ex);
         }
-                lgf.setVisible(true);
-                lgf.pack();
-                lgf.setLocationRelativeTo(null);
-                lgf.setExtendedState(Home.MAXIMIZED_HORIZ);
-                
-                this.dispose();
+    n.setVisible(true);
   
     
     }//GEN-LAST:event_btnLoginActionPerformed
