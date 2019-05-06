@@ -8,6 +8,8 @@ package Menu;
 
 
 
+import View.Home;
+import View.Menu;
 import java.awt.HeadlessException;
 import java.sql.Connection;
 import java.sql.JDBCType;
@@ -101,6 +103,7 @@ public class Tugas extends javax.swing.JFrame {
         jComboBox2 = new javax.swing.JComboBox();
         jScrollPane2 = new javax.swing.JScrollPane();
         tugas = new javax.swing.JTable();
+        btnBack = new javax.swing.JButton();
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -228,6 +231,13 @@ public class Tugas extends javax.swing.JFrame {
         ));
         jScrollPane2.setViewportView(tugas);
 
+        btnBack.setText("Back");
+        btnBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBackActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -252,33 +262,32 @@ public class Tugas extends javax.swing.JFrame {
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                             .addComponent(btInsert)
                                             .addComponent(SEARCH))
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGap(38, 38, 38)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                             .addGroup(layout.createSequentialGroup()
-                                                .addGap(38, 38, 38)
                                                 .addComponent(txtsmatkul, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addGap(18, 18, 18)
                                                 .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                             .addGroup(layout.createSequentialGroup()
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                                 .addComponent(btCheck)
-                                                .addGap(49, 49, 49)
-                                                .addComponent(btGanti)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addComponent(btSave)))))
-                                .addGap(26, 26, 26)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addComponent(btGanti)
+                                                .addGap(15, 15, 15)))))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(txtWaktu, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(cbHari, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(txtNoTugas, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(txtNamaTugas, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(txtMatkul, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(layout.createSequentialGroup()
-                                        .addGap(21, 21, 21)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(txtWaktu, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(cbHari, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(txtNoTugas, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(txtNamaTugas, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(txtMatkul, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addComponent(btSave)
+                                        .addGap(52, 52, 52)
                                         .addComponent(btDelete)
-                                        .addGap(143, 143, 143))))))
+                                        .addGap(45, 45, 45)
+                                        .addComponent(btnBack))))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(295, 295, 295)
                         .addComponent(jLabel1)))
@@ -322,7 +331,8 @@ public class Tugas extends javax.swing.JFrame {
                     .addComponent(btGanti)
                     .addComponent(btSave)
                     .addComponent(btDelete)
-                    .addComponent(btInsert))
+                    .addComponent(btInsert)
+                    .addComponent(btnBack))
                 .addGap(38, 38, 38)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(71, Short.MAX_VALUE))
@@ -391,6 +401,16 @@ public class Tugas extends javax.swing.JFrame {
     private void txtNoTugasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNoTugasActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNoTugasActionPerformed
+
+    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
+        Menu n = new Menu();
+                n.setVisible(true);
+                n.pack();
+                n.setLocationRelativeTo(null);
+                n.setExtendedState(Home.MAXIMIZED_HORIZ);
+                
+                this.dispose();
+    }//GEN-LAST:event_btnBackActionPerformed
      
     /**
      * @param args the command line arguments
@@ -439,6 +459,7 @@ public class Tugas extends javax.swing.JFrame {
     private javax.swing.JButton btGanti;
     private javax.swing.JButton btInsert;
     private javax.swing.JButton btSave;
+    private javax.swing.JButton btnBack;
     private javax.swing.JComboBox cbHari;
     private javax.swing.JComboBox jComboBox2;
     private javax.swing.JLabel jLabel1;

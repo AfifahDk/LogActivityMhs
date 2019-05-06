@@ -61,13 +61,13 @@ public class jadwal extends javax.swing.JFrame {
         txtwaktumulai = new javax.swing.JTextField();
         txtwaktuselesai = new javax.swing.JTextField();
         txtruangan = new javax.swing.JTextField();
-        cbhari = new javax.swing.JComboBox<>();
+        cbhari = new javax.swing.JComboBox<String>();
         btnclear = new javax.swing.JButton();
         btnupdate = new javax.swing.JButton();
         btndelete = new javax.swing.JButton();
         btninsert = new javax.swing.JButton();
         btnexit = new javax.swing.JButton();
-        cbsemester = new javax.swing.JComboBox<>();
+        cbsemester = new javax.swing.JComboBox<String>();
         btnshow = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -109,7 +109,7 @@ public class jadwal extends javax.swing.JFrame {
         });
 
         cbhari.setFont(new java.awt.Font("Comic Sans MS", 0, 11)); // NOI18N
-        cbhari.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SENIN", "SELASA", "RABU", "KAMIS", "JUMAT", "SABTU" }));
+        cbhari.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "SENIN", "SELASA", "RABU", "KAMIS", "JUMAT", "SABTU" }));
         cbhari.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbhariActionPerformed(evt);
@@ -156,7 +156,7 @@ public class jadwal extends javax.swing.JFrame {
             }
         });
 
-        cbsemester.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "semester 1", "semester 2", "semester 3", "semester 4", "semester 5", "semester 6", "semester 7", "semester 8", " " }));
+        cbsemester.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "semester 1", "semester 2", "semester 3", "semester 4", "semester 5", "semester 6", "semester 7", "semester 8", " " }));
         cbsemester.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbsemesterActionPerformed(evt);
@@ -265,11 +265,12 @@ public class jadwal extends javax.swing.JFrame {
                             .addComponent(jLabel7))
                         .addGap(38, 38, 38)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnclear)
-                    .addComponent(btninsert)
-                    .addComponent(btnupdate)
-                    .addComponent(btndelete))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(btninsert)
+                        .addComponent(btnupdate)
+                        .addComponent(btndelete)))
                 .addGap(67, 67, 67)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnexit)
