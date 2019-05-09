@@ -5,7 +5,7 @@
  */
 package Menu;
 
-import Menu.jadwal;
+
 import Menu.jadwal;
 import Menu.konek;
 import java.sql.Connection;
@@ -51,7 +51,7 @@ public class tmplJadwal extends javax.swing.JFrame {
     private void tampil(){
         DefaultTableModel model = new DefaultTableModel();
         model.addColumn("no");
-        model.addColumn("semester");
+ //       model.addColumn("semester");
         model.addColumn("hari");
         model.addColumn("mata kuliah / kegiatan");
         model.addColumn("ruangan / tempat");
@@ -99,7 +99,9 @@ public class tmplJadwal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 102, 51));
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        tbljadwal.setBackground(new java.awt.Color(0, 153, 102));
         tbljadwal.setFont(new java.awt.Font("Comic Sans MS", 0, 11)); // NOI18N
         tbljadwal.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -114,7 +116,9 @@ public class tmplJadwal extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(tbljadwal);
 
-        btnback.setBackground(new java.awt.Color(204, 204, 255));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 61, 930, 100));
+
+        btnback.setBackground(new java.awt.Color(0, 153, 102));
         btnback.setFont(new java.awt.Font("Comic Sans MS", 1, 11)); // NOI18N
         btnback.setText("back");
         btnback.addActionListener(new java.awt.event.ActionListener() {
@@ -122,7 +126,9 @@ public class tmplJadwal extends javax.swing.JFrame {
                 btnbackActionPerformed(evt);
             }
         });
+        getContentPane().add(btnback, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, -1, -1));
 
+        btnsearch.setBackground(new java.awt.Color(0, 153, 102));
         btnsearch.setFont(new java.awt.Font("Comic Sans MS", 1, 11)); // NOI18N
         btnsearch.setText("search");
         btnsearch.addActionListener(new java.awt.event.ActionListener() {
@@ -130,7 +136,9 @@ public class tmplJadwal extends javax.swing.JFrame {
                 btnsearchActionPerformed(evt);
             }
         });
+        getContentPane().add(btnsearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 11, -1, -1));
 
+        cbshari.setBackground(new java.awt.Color(0, 153, 102));
         cbshari.setFont(new java.awt.Font("Comic Sans MS", 0, 11)); // NOI18N
         cbshari.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SENIN", "SELASA", "RABU", "KAMIS", "JUMAT", "SABTU", "MINGGU" }));
         cbshari.addActionListener(new java.awt.event.ActionListener() {
@@ -138,7 +146,9 @@ public class tmplJadwal extends javax.swing.JFrame {
                 cbshariActionPerformed(evt);
             }
         });
+        getContentPane().add(cbshari, new org.netbeans.lib.awtextra.AbsoluteConstraints(165, 12, -1, -1));
 
+        btnall.setBackground(new java.awt.Color(0, 153, 102));
         btnall.setFont(new java.awt.Font("Comic Sans MS", 1, 11)); // NOI18N
         btnall.setText("show all");
         btnall.addActionListener(new java.awt.event.ActionListener() {
@@ -146,45 +156,10 @@ public class tmplJadwal extends javax.swing.JFrame {
                 btnallActionPerformed(evt);
             }
         });
+        getContentPane().add(btnall, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 11, -1, -1));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("D:\\oal\\fbb9056a8335e34a7b9c608a379e36a7b1da06db_hq.jpg")); // NOI18N
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 860, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(10, 10, 10)
-                            .addComponent(btnback)
-                            .addGap(13, 13, 13)
-                            .addComponent(btnsearch)
-                            .addGap(18, 18, 18)
-                            .addComponent(cbshari, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(18, 18, 18)
-                            .addComponent(btnall))
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 860, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap())
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnback)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(btnsearch)
-                        .addComponent(cbshari, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btnall)))
-                .addGap(25, 25, 25)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(38, 38, 38)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(126, 126, 126))
-        );
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\ASUS\\Downloads\\Microsoft Surface Laptop.jpg")); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 2, 930, 450));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
