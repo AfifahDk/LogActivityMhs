@@ -68,7 +68,7 @@ public class Register extends javax.swing.JFrame {
         txtConfirmPass = new javax.swing.JPasswordField();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        btnsignin = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -136,8 +136,13 @@ public class Register extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Comic Sans MS", 0, 11)); // NOI18N
         jLabel1.setText("Already Have a Logact Accound?");
 
-        jLabel2.setFont(new java.awt.Font("Comic Sans MS", 1, 12)); // NOI18N
-        jLabel2.setText("Sign In");
+        btnsignin.setFont(new java.awt.Font("Comic Sans MS", 1, 12)); // NOI18N
+        btnsignin.setText("Sign In");
+        btnsignin.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnsigninMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -147,7 +152,7 @@ public class Register extends javax.swing.JFrame {
                 .addGap(115, 115, 115)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel2)
+                .addComponent(btnsignin)
                 .addContainerGap(158, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -156,11 +161,11 @@ public class Register extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(jLabel2))
+                    .addComponent(btnsignin))
                 .addContainerGap(17, Short.MAX_VALUE))
         );
 
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Tampilan/Diary-icon (1).png"))); // NOI18N
+        jLabel8.setIcon(new javax.swing.ImageIcon("C:\\Users\\ASUS\\Documents\\GitHub\\LogActivityMhs\\src\\Tampilan\\Diary-icon (1).png")); // NOI18N
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -307,6 +312,21 @@ public class Register extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtConfirmPassActionPerformed
 
+    private void btnsigninMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnsigninMouseClicked
+        // TODO add your handling code here:
+        Login n = null;
+        try {
+            n = new Login();
+        } catch (SQLException ex) {
+            Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        n.setVisible(true);
+        n.pack();
+        n.setLocationRelativeTo(null);
+        n.setExtendedState(MenuUtama.MAXIMIZED_HORIZ);              
+        this.dispose();
+    }//GEN-LAST:event_btnsigninMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -348,9 +368,9 @@ public class Register extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnSignup;
+    private javax.swing.JLabel btnsignin;
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel6;
