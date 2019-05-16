@@ -270,7 +270,7 @@ public class Tugas extends javax.swing.JFrame {
             String sql = "INSERT INTO tugas VALUES ('"+txtNoTugas.getText()+
                     "','"+txtNamaTugas.getText()+"','"+txtMatkul.getText()+
                     "','"+cbHari.getSelectedItem()+"','"+txtWaktu.getText()+
-                    "','"+getUsername()+"')";
+                    "','"+Username+"')";
             
             java.sql.Connection con = (Connection)konek.konekDB();
             java.sql.PreparedStatement pstm = con.prepareStatement(sql);

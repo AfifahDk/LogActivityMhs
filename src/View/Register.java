@@ -271,7 +271,7 @@ public class Register extends javax.swing.JFrame {
     }
     else{
     PreparedStatement pstm;
-    String sql = "INSERT INTO `register`(`email`, `nama_lengkap`, `username`, `password`) VALUES (?,?,?,?)";
+    String sql = "INSERT INTO `register` (`nama_lengkap`, `username`, `password`) VALUES (?,?,?)";
         try {
             pstm= konek.konekDB().prepareStatement(sql);
            
