@@ -196,26 +196,32 @@ public class Pengguna extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnLogin1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnLogin1MouseClicked
-    dispose();
-        Login n = null;
+    Login n = null;
         try {
             n = new Login();
         } catch (SQLException ex) {
-            Logger.getLogger(Cover.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Pengguna.class.getName()).log(Level.SEVERE, null, ex);
         }
-    n.setVisible(true);
+        n.setVisible(true);
+        n.pack();
+        n.setLocationRelativeTo(null);
+        n.setExtendedState(MenuUtama.MAXIMIZED_HORIZ);              
+        this.dispose();
      
     }//GEN-LAST:event_btnLogin1MouseClicked
 
     private void btnSignup1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSignup1MouseClicked
-    dispose();
-        Register n = null;
+    Register n = null;
         try {
             n = new Register();
         } catch (SQLException ex) {
-            Logger.getLogger(Cover.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Pengguna.class.getName()).log(Level.SEVERE, null, ex);
         }
-    n.setVisible(true);
+        n.setVisible(true);
+        n.pack();
+        n.setLocationRelativeTo(null);
+        n.setExtendedState(MenuUtama.MAXIMIZED_HORIZ);              
+        this.dispose();
   
     }//GEN-LAST:event_btnSignup1MouseClicked
 
