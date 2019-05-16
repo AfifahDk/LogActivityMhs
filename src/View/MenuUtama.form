@@ -134,7 +134,7 @@
             <Component class="javax.swing.JLabel" name="jLabel5">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\ASUS\Desktop\ikon\Home-icon.png"/>
+                  <Image iconType="3" name="/Tampilan/Home-icon.png"/>
                 </Property>
               </Properties>
             </Component>
@@ -239,7 +239,7 @@
                 <Component class="javax.swing.JLabel" name="txtass">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="2" name="C:\Users\ASUS\Desktop\ikon\compose-icon.png"/>
+                      <Image iconType="3" name="/Tampilan/compose-icon.png"/>
                     </Property>
                   </Properties>
                   <Events>
@@ -249,7 +249,7 @@
                 <Component class="javax.swing.JLabel" name="txtsc">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="2" name="C:\Users\ASUS\Desktop\ikon\clipboard-icon.png"/>
+                      <Image iconType="3" name="/Tampilan/clipboard-icon.png"/>
                     </Property>
                   </Properties>
                   <Events>
@@ -306,7 +306,7 @@
         <Component class="javax.swing.JLabel" name="txtout">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\ASUS\Desktop\ikon\Button-Turn-On-icon.png"/>
+              <Image iconType="3" name="/Tampilan/Button-Turn-On-icon.png"/>
             </Property>
           </Properties>
           <Events>
@@ -316,7 +316,7 @@
         <Component class="javax.swing.JLabel" name="txtabout">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\ASUS\Desktop\ikon\Button-Help-icon (1).png"/>
+              <Image iconType="3" name="/Tampilan/Button-Help-icon.png"/>
             </Property>
           </Properties>
         </Component>

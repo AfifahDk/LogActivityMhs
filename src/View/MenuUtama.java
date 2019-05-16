@@ -61,7 +61,7 @@ public class MenuUtama extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
         jLabel2.setText("LOG ACITIVITY MAHASISWA");
 
-        jLabel5.setIcon(new javax.swing.ImageIcon("C:\\Users\\ASUS\\Desktop\\ikon\\Home-icon.png")); // NOI18N
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Tampilan/Home-icon.png"))); // NOI18N
 
         jLabel3.setFont(new java.awt.Font("Comic Sans MS", 0, 11)); // NOI18N
         jLabel3.setText("\" Don\"t Remember, Just Write It!! \"");
@@ -107,14 +107,14 @@ public class MenuUtama extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         jLabel1.setText("Assigment");
 
-        txtass.setIcon(new javax.swing.ImageIcon("C:\\Users\\ASUS\\Desktop\\ikon\\compose-icon.png")); // NOI18N
+        txtass.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Tampilan/compose-icon.png"))); // NOI18N
         txtass.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 txtassMouseClicked(evt);
             }
         });
 
-        txtsc.setIcon(new javax.swing.ImageIcon("C:\\Users\\ASUS\\Desktop\\ikon\\clipboard-icon.png")); // NOI18N
+        txtsc.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Tampilan/clipboard-icon.png"))); // NOI18N
         txtsc.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 txtscMouseClicked(evt);
@@ -185,14 +185,14 @@ public class MenuUtama extends javax.swing.JFrame {
 
         jPanel6.setBackground(new java.awt.Color(254, 211, 48));
 
-        txtout.setIcon(new javax.swing.ImageIcon("C:\\Users\\ASUS\\Desktop\\ikon\\Button-Turn-On-icon.png")); // NOI18N
+        txtout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Tampilan/Button-Turn-On-icon.png"))); // NOI18N
         txtout.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 txtoutMouseClicked(evt);
             }
         });
 
-        txtabout.setIcon(new javax.swing.ImageIcon("C:\\Users\\ASUS\\Desktop\\ikon\\Button-Help-icon (1).png")); // NOI18N
+        txtabout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Tampilan/Button-Help-icon.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
