@@ -142,6 +142,7 @@ public class Search extends javax.swing.JFrame {
 
     private void txtCariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCariActionPerformed
         // TODO add your handling code here:
+        
     }//GEN-LAST:event_txtCariActionPerformed
 
     private void SEARCHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SEARCHActionPerformed

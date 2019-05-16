@@ -38,6 +38,10 @@ public class jadwal extends javax.swing.JFrame {
         initComponents();
         kosong();
     }
+
+    public String getUsername() {
+        return Username;
+    }
     public jadwal(String Username){
         initComponents();
         kosong();
@@ -66,13 +70,13 @@ public class jadwal extends javax.swing.JFrame {
         txtwaktumulai = new javax.swing.JTextField();
         txtwaktuselesai = new javax.swing.JTextField();
         txtruangan = new javax.swing.JTextField();
-        cbhari = new javax.swing.JComboBox<>();
+        cbhari = new javax.swing.JComboBox<String>();
         btnclear = new javax.swing.JButton();
         btnupdate = new javax.swing.JButton();
         btndelete = new javax.swing.JButton();
         btninsert = new javax.swing.JButton();
         btnexit = new javax.swing.JButton();
-        cbsemester = new javax.swing.JComboBox<>();
+        cbsemester = new javax.swing.JComboBox<String>();
         btnshow = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -114,7 +118,7 @@ public class jadwal extends javax.swing.JFrame {
         });
 
         cbhari.setFont(new java.awt.Font("Comic Sans MS", 0, 11)); // NOI18N
-        cbhari.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SENIN", "SELASA", "RABU", "KAMIS", "JUMAT", "SABTU" }));
+        cbhari.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "SENIN", "SELASA", "RABU", "KAMIS", "JUMAT", "SABTU" }));
         cbhari.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbhariActionPerformed(evt);
@@ -161,7 +165,7 @@ public class jadwal extends javax.swing.JFrame {
             }
         });
 
-        cbsemester.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "semester 1", "semester 2", "semester 3", "semester 4", "semester 5", "semester 6", "semester 7", "semester 8", " " }));
+        cbsemester.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "semester 1", "semester 2", "semester 3", "semester 4", "semester 5", "semester 6", "semester 7", "semester 8", " " }));
         cbsemester.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbsemesterActionPerformed(evt);
@@ -241,10 +245,13 @@ public class jadwal extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(cbsemester, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(16, 16, 16)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cbhari, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(19, 19, 19)
+                        .addComponent(jLabel4))
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(cbhari, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(24, 24, 24)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
@@ -263,7 +270,6 @@ public class jadwal extends javax.swing.JFrame {
                             .addComponent(txtwaktumulai, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel7))
                         .addGap(38, 38, 38)))
-                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btninsert)
                     .addComponent(btnupdate)
@@ -323,7 +329,16 @@ public class jadwal extends javax.swing.JFrame {
     private void btninsertActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btninsertActionPerformed
         // TODO add your handling code here:
         try{
-            String sql = "insert into jadwal values ('"+txtnojadwal.getText()+"','"+cbsemester.getSelectedItem()+"','"+cbhari.getSelectedItem()+"','"+txtmatakuliah.getText()+"','"+txtruangan.getText()+"','"+txtwaktumulai.getText()+"','"+txtwaktuselesai.getText()+"')";
+            //String sql = "insert into jadwal values ('"+txtnojadwal.getText()+"','"+cbsemester.getSelectedItem()+"','"+cbhari.getSelectedItem()+"','"+txtmatakuliah.getText()+"','"+txtruangan.getText()+"','"+txtwaktumulai.getText()+"','"+txtwaktuselesai.getText()+Username+"')";
+            String sql = "insert into jadwal values ('"+txtnojadwal.getText()+
+                    "','"+cbsemester.getSelectedItem()+
+                    "','"+cbhari.getSelectedItem()+
+                    "','"+txtmatakuliah.getText()+
+                    "','"+txtruangan.getText()+
+                    "','"+txtwaktumulai.getText()+
+                    "','"+txtwaktuselesai.getText()+
+                    "','"+getUsername()+"')";
+                    
             java.sql.Connection con = (Connection)konek.konekDB();
             java.sql.PreparedStatement pstm = con.prepareStatement(sql);
             pstm.execute();
