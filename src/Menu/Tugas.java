@@ -8,8 +8,7 @@ package Menu;
 
 
 
-import View.Home;
-import View.Menu;
+import View.MenuUtama;
 import java.awt.HeadlessException;
 import java.sql.Connection;
 import java.sql.JDBCType;
@@ -397,11 +396,11 @@ public class Tugas extends javax.swing.JFrame {
     }//GEN-LAST:event_txtNoTugasActionPerformed
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
-        Menu n = new Menu();
+        MenuUtama n = new MenuUtama();
                 n.setVisible(true);
                 n.pack();
                 n.setLocationRelativeTo(null);
-                n.setExtendedState(Home.MAXIMIZED_HORIZ);
+                n.setExtendedState(MenuUtama.MAXIMIZED_HORIZ);
                 
                 this.dispose();
     }//GEN-LAST:event_btnBackActionPerformed
@@ -412,7 +411,7 @@ public class Tugas extends javax.swing.JFrame {
                 n.setVisible(true);
                 n.pack();
                 n.setLocationRelativeTo(null);
-                n.setExtendedState(Home.MAXIMIZED_HORIZ);
+                n.setExtendedState(MenuUtama.MAXIMIZED_HORIZ);
                 
                 this.dispose();
     }//GEN-LAST:event_btsearchActionPerformed

@@ -5,7 +5,7 @@
  */
 package Menu;
 
-import View.Menu;
+import View.MenuUtama;
 import java.awt.HeadlessException;
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -18,7 +18,7 @@ import javax.swing.table.DefaultTableModel;
  * @author ASUS
  */
 public class jadwal extends javax.swing.JFrame {
-    
+    String Username;
     /**
      * Creates new form jadwal
      */
@@ -37,6 +37,11 @@ public class jadwal extends javax.swing.JFrame {
     public jadwal() {
         initComponents();
         kosong();
+    }
+    public jadwal(String Username){
+        initComponents();
+        kosong();
+        this.Username=Username;
     }
 
     /**
@@ -305,7 +310,7 @@ public class jadwal extends javax.swing.JFrame {
     private void btnexitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnexitActionPerformed
 //        System.exit(0);
         dispose();
-        Menu n = new Menu();
+        MenuUtama n = new MenuUtama();
         n.setVisible(true);
                   
     }//GEN-LAST:event_btnexitActionPerformed

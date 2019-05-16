@@ -12,6 +12,7 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.HashMap;
 import javax.swing.table.DefaultTableModel;
+import View.Login;
 
 /**
  *
@@ -59,6 +60,7 @@ public class tmplJadwal extends javax.swing.JFrame {
         model.addColumn("waktu selesai");
         
         try{
+           
             String sql = "SELECT * FROM jadwal";
             java.sql.Connection con = (Connection)konek.konekDB();
             java.sql.Statement stm = con.createStatement();
