@@ -120,8 +120,9 @@ public class Pengguna extends javax.swing.JFrame {
                 .addComponent(btnSignup1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel6)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 134, Short.MAX_VALUE)
-                .addComponent(btnCancel))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 123, Short.MAX_VALUE)
+                .addComponent(btnCancel)
+                .addContainerGap())
         );
 
         bodyPanel.add(penggunaPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 220, 500));

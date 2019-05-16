@@ -23,6 +23,7 @@ public class tmplJadwal extends javax.swing.JFrame {
     /**
      * Creates new form tmplJadwal
      */
+    String Username;
     private void Stampil(){
         DefaultTableModel model = new DefaultTableModel();
         model.addColumn("no");
@@ -61,7 +62,7 @@ public class tmplJadwal extends javax.swing.JFrame {
         
         try{
            
-            String sql = "SELECT * FROM jadwal";
+            String sql = "SELECT * FROM jadwal where username ='"+Username+"'";
             java.sql.Connection con = (Connection)konek.konekDB();
             java.sql.Statement stm = con.createStatement();
             java.sql.ResultSet res = stm.executeQuery(sql);
@@ -78,6 +79,13 @@ public class tmplJadwal extends javax.swing.JFrame {
     }
     public tmplJadwal() {
         initComponents();
+        Stampil();
+        tampil();
+    }
+    
+    public tmplJadwal(String Username) {
+        initComponents();
+        this.Username=Username;
         Stampil();
         tampil();
     }

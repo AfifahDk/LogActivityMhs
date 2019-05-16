@@ -13,12 +13,19 @@ import javax.swing.JOptionPane;
  *
  * @author acer
  */
+
 public class MenuUtama extends javax.swing.JFrame {
 
     /**
      * Creates new form MenuUtama
      */
+    String Username;
     public MenuUtama() {
+        initComponents();
+    }
+    
+    public MenuUtama(String Username) {
+        this.Username=Username;
         initComponents();
     }
 
@@ -324,7 +331,7 @@ public class MenuUtama extends javax.swing.JFrame {
     }//GEN-LAST:event_ASSIGNMENTMouseClicked
 
     private void SCHEDULING1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SCHEDULING1MouseClicked
-        jadwal n = new jadwal();
+        jadwal n = new jadwal(Username);
         n.setVisible(true);
         n.pack();
         n.setLocationRelativeTo(null);

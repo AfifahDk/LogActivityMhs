@@ -231,7 +231,7 @@ public class Login extends javax.swing.JFrame {
             
             if(rs.next()){
                 JOptionPane.showMessageDialog(null, "Login Success");
-                MenuUtama n = new MenuUtama();
+                MenuUtama n = new MenuUtama(Username);
                 n.setVisible(true);
                 n.pack();
                 n.setLocationRelativeTo(null);
