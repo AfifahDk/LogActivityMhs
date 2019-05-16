@@ -40,7 +40,6 @@ public class MenuUtama extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
         mainPanel = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         btnLogout = new javax.swing.JButton();
@@ -65,25 +64,15 @@ public class MenuUtama extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(0, 102, 102));
 
-        jLabel3.setFont(new java.awt.Font("Lemon", 0, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("jLabel3");
-
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(70, 70, 70)
-                .addComponent(jLabel3)
-                .addContainerGap(194, Short.MAX_VALUE))
+            .addGap(0, 320, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addComponent(jLabel3)
-                .addContainerGap(61, Short.MAX_VALUE))
+            .addGap(0, 110, Short.MAX_VALUE)
         );
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 0, 320, 110));
@@ -201,7 +190,7 @@ public class MenuUtama extends javax.swing.JFrame {
         HomePanel.setLayout(HomePanelLayout);
         HomePanelLayout.setHorizontalGroup(
             HomePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 430, Short.MAX_VALUE)
+            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 443, Short.MAX_VALUE)
         );
         HomePanelLayout.setVerticalGroup(
             HomePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -272,11 +261,11 @@ public class MenuUtama extends javax.swing.JFrame {
         jPanel8.setLayout(jPanel8Layout);
         jPanel8Layout.setHorizontalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 430, Short.MAX_VALUE)
+            .addGap(0, 443, Short.MAX_VALUE)
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 430, Short.MAX_VALUE)
+            .addGap(0, 445, Short.MAX_VALUE)
         );
 
         utamaPanel.add(jPanel8, "card4");
@@ -396,7 +385,6 @@ public class MenuUtama extends javax.swing.JFrame {
     private javax.swing.JLabel btnMenu;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    public javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
