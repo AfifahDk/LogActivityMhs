@@ -53,7 +53,6 @@ public class tmplJadwal extends javax.swing.JFrame {
     private void tampil(){
         DefaultTableModel model = new DefaultTableModel();
         model.addColumn("no");
- //       model.addColumn("semester");
         model.addColumn("hari");
         model.addColumn("kegiatan");
         model.addColumn("tempat");
