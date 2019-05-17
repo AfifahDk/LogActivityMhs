@@ -268,9 +268,11 @@ public class Tugas extends javax.swing.JFrame {
         // TODO add your handling code here:
         try{
             String sql = "INSERT INTO tugas VALUES ('"+txtNoTugas.getText()+
-                    "','"+txtNamaTugas.getText()+"','"+txtMatkul.getText()+
-                    "','"+cbHari.getSelectedItem()+"','"+txtWaktu.getText()+
-                    "','"+Username+"')";
+                    "','"+txtNamaTugas.getText()+
+                    "','"+txtMatkul.getText()+
+                    "','"+cbHari.getSelectedItem()+
+                    "','"+txtWaktu.getText()+
+                    "','"+getUsername()+"')";
             
             java.sql.Connection con = (Connection)konek.konekDB();
             java.sql.PreparedStatement pstm = con.prepareStatement(sql);
@@ -305,7 +307,7 @@ public class Tugas extends javax.swing.JFrame {
 
     private void btShowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btShowActionPerformed
             dispose();
-            tmpltugas n = new tmpltugas();
+            tmpltugas n = new tmpltugas(Username);
             n.setVisible(true);
     }//GEN-LAST:event_btShowActionPerformed
 
