@@ -238,7 +238,7 @@
                 <Component class="javax.swing.JLabel" name="txtass">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/Tampilan/compose-icon.png"/>
+                      <Image iconType="3" name="/Tampilan/compose-icon (2).png"/>
                     </Property>
                   </Properties>
                   <Events>

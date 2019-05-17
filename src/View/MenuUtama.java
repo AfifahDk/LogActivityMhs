@@ -109,7 +109,7 @@ public class MenuUtama extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         jLabel1.setText("Assigment");
 
-        txtass.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Tampilan/compose-icon.png"))); // NOI18N
+        txtass.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Tampilan/compose-icon (2).png"))); // NOI18N
         txtass.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 txtassMouseClicked(evt);
