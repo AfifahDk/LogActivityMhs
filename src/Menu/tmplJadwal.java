@@ -35,7 +35,7 @@ public class tmplJadwal extends javax.swing.JFrame {
         model.addColumn("waktu selesai");
         
         try{
-            String sql = "SELECT * FROM jadwal WHERE hari LIKE ('"+txts.getText()+"')";
+            String sql = "SELECT * FROM jadwal WHERE hari LIKE ('%"+txts.getText()+"%') AND username='" + Username + "'";
             java.sql.Connection con = (Connection)konek.konekDB();
             java.sql.Statement stm = con.createStatement();
             java.sql.ResultSet res = stm.executeQuery(sql);

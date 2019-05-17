@@ -9,11 +9,9 @@ package Menu;
 
 
 import View.MenuUtama;
-import View.Login;
 import java.awt.HeadlessException;
 import java.sql.Connection;
 import java.sql.SQLException;
-import java.util.TreeMap;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -236,9 +234,11 @@ public class Tugas extends javax.swing.JFrame {
     private void btinsertActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btinsertActionPerformed
         // TODO add your handling code here:
         try{
-            String sql = "INSERT INTO tugas VALUES ('"+txtNoTugas.getText()+
-                    "','"+txtNamaTugas.getText()+"','"+txtMatkul.getText()+
-                    "','"+cbHari.getSelectedItem()+"','"+txtWaktu.getText()+
+            String sql = "insert into tugas values ('"+txtNoTugas.getText()+
+                    "','"+txtNamaTugas.getText()+
+                    "','"+txtMatkul.getText()+
+                    "','"+cbHari.getSelectedItem()+
+                    "','"+txtWaktu.getText()+
                     "','"+getUsername()+"')";
             
             java.sql.Connection con = (Connection)konek.konekDB();
@@ -258,7 +258,7 @@ public class Tugas extends javax.swing.JFrame {
                     "',nama_tugas='"+txtNamaTugas.getText()+
                     "',mata_kuliah='"+txtMatkul.getText()+
                     "',hari_pengumpulan='"+cbHari.getSelectedItem()+
-                    "',waktu_pengumpulan='"+txtWaktu.getText()+"'username='"+getUsername()+
+                    "',waktu_pengumpulan='"+txtWaktu.getText()+
                     "' WHERE no_tugas = '"+txtNoTugas.getText()+"'";
             java.sql.Connection con = (Connection)konek.konekDB();
             java.sql.PreparedStatement pstm = con.prepareStatement(sql);
