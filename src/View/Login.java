@@ -216,7 +216,7 @@ public class Login extends javax.swing.JFrame {
                 n.pack();
                 n.setLocationRelativeTo(null);
                 n.setExtendedState(Login.MAXIMIZED_HORIZ);
-                //n.jLabel3.setText("Welcome < "+Username+" >");
+                n.jLabel7.setText("HAAII! < "+Username+" >");
 
                 this.dispose();
             }
