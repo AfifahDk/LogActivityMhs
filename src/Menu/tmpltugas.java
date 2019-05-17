@@ -31,7 +31,6 @@ public class tmpltugas extends javax.swing.JFrame {
         model.addColumn("Mata Kuliah");
         model.addColumn("Hari Pengumpulan");
         model.addColumn("Deadline");
-        model.addColumn("Waktu Pengumpulan");
         
         try{
             String sql = "SELECT * FROM tugas WHERE waktu_pengumpulan LIKE ('"+txtdeadline.getText()+"')";
@@ -54,7 +53,6 @@ public class tmpltugas extends javax.swing.JFrame {
        model.addColumn("Mata Kuliah");
        model.addColumn("Hari Pengumpulan");
        model.addColumn("Deadline");
-       model.addColumn("Waktu Pengumpulan");
        
        try{
        
@@ -64,7 +62,7 @@ public class tmpltugas extends javax.swing.JFrame {
            java.sql.ResultSet res = stm.executeQuery(sql);
            
             while(res.next()){
-                model.addRow(new Object[] {res.getString(1),res.getString(2),res.getString(3),res.getString(4),res.getString(5)});
+                model.addRow(new Object[] {res.getString(1),res.getString(2),res.getString(3),res.getString(4),res.getString(5),res.getString(6)});
             }
             tbltugas.setModel(model);
        }catch (SQLException e){
@@ -115,7 +113,7 @@ public class tmpltugas extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(tbltugas);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 146, 482, 138));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 930, 138));
 
         txtdeadline.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

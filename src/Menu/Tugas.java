@@ -9,6 +9,7 @@ package Menu;
 
 
 import View.MenuUtama;
+import View.Login;
 import java.awt.HeadlessException;
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -22,6 +23,7 @@ import javax.swing.table.DefaultTableModel;
  */
 public class Tugas extends javax.swing.JFrame {
      String Username;
+     
        private void kosong(){
            txtNoTugas.setEditable(true);
            txtNoTugas.setText(null);
@@ -31,30 +33,7 @@ public class Tugas extends javax.swing.JFrame {
            txtWaktu.setText(null);
            
        }
-      /* private void tampilkan_data(){
-           DefaultTableModel model = new DefaultTableModel(); 
-           model.addColumn("No.");
-           model.addColumn("Nama Tugas");
-           model.addColumn("Nama Matkul");
-           model.addColumn("Hari");
-           model.addColumn("Waktu pengumpulan");
-           
-        try{
-            String sql = "select * from tugas";
-            java.sql.Connection con = (Connection)konek.konekDB();
-            java.sql.Statement stm = con.createStatement();
-            java.sql.ResultSet res = stm.executeQuery(sql);
-            
-            while(res.next()){
-                model.addRow(new Object[] {res.getString(1),res.getString(2),res.getString(3),res.getString(4),res.getString(5)});   
-            }
-            tugas.setModel(model);
-            
-        }catch (SQLException e){
-            System.out.println("Error : " + e.getMessage());
-        }
-
-    }
+     
     /**
      * Creates new form Tugas
      */
@@ -102,7 +81,6 @@ public class Tugas extends javax.swing.JFrame {
         cbHari = new javax.swing.JComboBox();
         txtWaktu = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        btsearch = new javax.swing.JButton();
         btnexit = new javax.swing.JButton();
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -229,15 +207,6 @@ public class Tugas extends javax.swing.JFrame {
         jLabel2.setText("*Tahun-Bulan-Tanggal Jam:Menit:Detik");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 210, 218, -1));
 
-        btsearch.setFont(new java.awt.Font("Comic Sans MS", 0, 11)); // NOI18N
-        btsearch.setText("Search");
-        btsearch.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btsearchActionPerformed(evt);
-            }
-        });
-        getContentPane().add(btsearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 180, -1, -1));
-
         btnexit.setFont(new java.awt.Font("Comic Sans MS", 1, 12)); // NOI18N
         btnexit.setText("Back to menu");
         btnexit.addActionListener(new java.awt.event.ActionListener() {
@@ -270,7 +239,7 @@ public class Tugas extends javax.swing.JFrame {
             String sql = "INSERT INTO tugas VALUES ('"+txtNoTugas.getText()+
                     "','"+txtNamaTugas.getText()+"','"+txtMatkul.getText()+
                     "','"+cbHari.getSelectedItem()+"','"+txtWaktu.getText()+
-                    "','"+Username+"')";
+                    "','"+getUsername()+"')";
             
             java.sql.Connection con = (Connection)konek.konekDB();
             java.sql.PreparedStatement pstm = con.prepareStatement(sql);
@@ -289,7 +258,7 @@ public class Tugas extends javax.swing.JFrame {
                     "',nama_tugas='"+txtNamaTugas.getText()+
                     "',mata_kuliah='"+txtMatkul.getText()+
                     "',hari_pengumpulan='"+cbHari.getSelectedItem()+
-                    "',waktu_pengumpulan='"+txtWaktu.getText()+
+                    "',waktu_pengumpulan='"+txtWaktu.getText()+"'username='"+getUsername()+
                     "' WHERE no_tugas = '"+txtNoTugas.getText()+"'";
             java.sql.Connection con = (Connection)konek.konekDB();
             java.sql.PreparedStatement pstm = con.prepareStatement(sql);
@@ -305,7 +274,7 @@ public class Tugas extends javax.swing.JFrame {
 
     private void btShowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btShowActionPerformed
             dispose();
-            tmpltugas n = new tmpltugas();
+            tmpltugas n = new tmpltugas(Username);
             n.setVisible(true);
     }//GEN-LAST:event_btShowActionPerformed
 
@@ -316,17 +285,6 @@ public class Tugas extends javax.swing.JFrame {
     private void txtNoTugasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNoTugasActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNoTugasActionPerformed
-
-    private void btsearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btsearchActionPerformed
-        // TODO add your handling code here:
-        Search n = new Search();
-                n.setVisible(true);
-                n.pack();
-                n.setLocationRelativeTo(null);
-                n.setExtendedState(MenuUtama.MAXIMIZED_HORIZ);
-                
-                this.dispose();
-    }//GEN-LAST:event_btsearchActionPerformed
 
     private void btClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btClearActionPerformed
         kosong();
@@ -388,7 +346,6 @@ public class Tugas extends javax.swing.JFrame {
     private javax.swing.JButton btUpdate;
     private javax.swing.JButton btinsert;
     private javax.swing.JButton btnexit;
-    private javax.swing.JButton btsearch;
     private javax.swing.JComboBox cbHari;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
