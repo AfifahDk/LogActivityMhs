@@ -90,22 +90,113 @@ public class tmpltugas extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        txtsearch = new javax.swing.JLabel();
+        txtdeadline = new javax.swing.JTextField();
+        txtall = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        txtback = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tbltugas = new javax.swing.JTable();
-        txtdeadline = new javax.swing.JTextField();
-        btnsearch = new javax.swing.JButton();
-        btnall = new javax.swing.JButton();
-        btnback = new javax.swing.JButton();
-        jPanel1 = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        txtsearch = new javax.swing.JLabel();
-        txtshow = new javax.swing.JLabel();
-        txts = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel1.setBackground(new java.awt.Color(254, 211, 48));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Tampilan/Files-2-icon.png"))); // NOI18N
+
+        jLabel2.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
+        jLabel2.setText("LOG ACTIVITY MAHASISWA");
+
+        txtsearch.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Tampilan/Zoom-icon.png"))); // NOI18N
+        txtsearch.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtsearchMouseClicked(evt);
+            }
+        });
+
+        txtdeadline.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtdeadlineActionPerformed(evt);
+            }
+        });
+
+        txtall.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Tampilan/Button-1-play-icon (1).png"))); // NOI18N
+        txtall.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtallMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(12, 12, 12)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 217, Short.MAX_VALUE)
+                .addComponent(txtall)
+                .addGap(18, 18, 18)
+                .addComponent(txtsearch)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(txtdeadline, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(11, 11, 11))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(txtdeadline, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(23, 23, 23))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtsearch)
+                            .addComponent(txtall))
+                        .addGap(14, 14, 14))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addGap(28, 28, 28))))
+        );
+
+        jPanel2.setBackground(new java.awt.Color(254, 211, 48));
+
+        txtback.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Tampilan/Arrow-prevous-5-icon - Copy.png"))); // NOI18N
+        txtback.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtbackMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(txtback)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(13, Short.MAX_VALUE)
+                .addComponent(txtback)
+                .addContainerGap())
+        );
+
+        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
+
+        tbltugas.setBackground(new java.awt.Color(254, 211, 48));
         tbltugas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -119,141 +210,36 @@ public class tmpltugas extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(tbltugas);
 
-        txtdeadline.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtdeadlineActionPerformed(evt);
-            }
-        });
-
-        btnsearch.setBackground(new java.awt.Color(0, 153, 102));
-        btnsearch.setFont(new java.awt.Font("Comic Sans MS", 1, 11)); // NOI18N
-        btnsearch.setText("search");
-        btnsearch.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnsearchActionPerformed(evt);
-            }
-        });
-
-        btnall.setBackground(new java.awt.Color(0, 153, 102));
-        btnall.setFont(new java.awt.Font("Comic Sans MS", 1, 11)); // NOI18N
-        btnall.setText("show all");
-        btnall.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnallActionPerformed(evt);
-            }
-        });
-
-        btnback.setBackground(new java.awt.Color(0, 153, 102));
-        btnback.setFont(new java.awt.Font("Comic Sans MS", 1, 11)); // NOI18N
-        btnback.setText("back");
-        btnback.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnbackActionPerformed(evt);
-            }
-        });
-
-        jPanel1.setBackground(new java.awt.Color(254, 211, 48));
-
-        jPanel2.setBackground(new java.awt.Color(254, 211, 48));
-
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Tampilan/Files-2-icon.png"))); // NOI18N
-
-        jLabel1.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
-        jLabel1.setText("LOG ACITIVITY");
-
-        txtsearch.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Tampilan/Zoom-icon.png"))); // NOI18N
-        txtsearch.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                txtsearchMouseClicked(evt);
-            }
-        });
-
-        txtshow.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Tampilan/Button-1-play-icon (1).png"))); // NOI18N
-        txtshow.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                txtshowMouseClicked(evt);
-            }
-        });
-
-        txts.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtsActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 310, Short.MAX_VALUE)
-                .addComponent(txtshow)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(txtsearch)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(txts, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE))
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING)
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(11, 11, 11)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(16, 16, 16)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtshow)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtsearch))))
-                .addGap(11, 11, 11))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(txts, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(20, 20, 20))
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(62, 62, 62)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(98, Short.MAX_VALUE))
         );
-
-        jPanel1.add(jPanel2);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(0, 0, 0)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 900, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnback)
-                        .addGap(13, 13, 13)
-                        .addComponent(btnsearch)
-                        .addGap(88, 88, 88)
-                        .addComponent(btnall)
-                        .addGap(31, 31, 31)
-                        .addComponent(txtdeadline, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 849, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(txtdeadline, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnall))
-                        .addGap(51, 51, 51))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(53, 53, 53)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnback)
-                            .addComponent(btnsearch))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 138, Short.MAX_VALUE)))
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(0, 0, 0)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
@@ -263,36 +249,22 @@ public class tmpltugas extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtdeadlineActionPerformed
 
-    private void btnsearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsearchActionPerformed
+    private void txtbackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtbackMouseClicked
         // TODO add your handling code here:
-        search();
-    }//GEN-LAST:event_btnsearchActionPerformed
-
-    private void btnallActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnallActionPerformed
-        // TODO add your handling code here:
-        tampiltbl();
-    }//GEN-LAST:event_btnallActionPerformed
-
-    private void btnbackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnbackActionPerformed
-        // TODO add your handling code here:
-        dispose();
+         dispose();
         Tugas n = new Tugas();
         n.setVisible(true);
-    }//GEN-LAST:event_btnbackActionPerformed
+    }//GEN-LAST:event_txtbackMouseClicked
 
     private void txtsearchMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtsearchMouseClicked
         // TODO add your handling code here:
-        Stampil();
+        search();
     }//GEN-LAST:event_txtsearchMouseClicked
 
-    private void txtshowMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtshowMouseClicked
+    private void txtallMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtallMouseClicked
         // TODO add your handling code here:
-        tampil();
-    }//GEN-LAST:event_txtshowMouseClicked
-
-    private void txtsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtsActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtsActionPerformed
+         tampiltbl();
+    }//GEN-LAST:event_txtallMouseClicked
 
     /**
      * @param args the command line arguments
@@ -330,18 +302,16 @@ public class tmpltugas extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnall;
-    private javax.swing.JButton btnback;
-    private javax.swing.JButton btnsearch;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tbltugas;
+    private javax.swing.JLabel txtall;
+    private javax.swing.JLabel txtback;
     private javax.swing.JTextField txtdeadline;
-    private javax.swing.JTextField txts;
     private javax.swing.JLabel txtsearch;
-    private javax.swing.JLabel txtshow;
     // End of variables declaration//GEN-END:variables
 }

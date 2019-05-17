@@ -118,10 +118,10 @@ public class tmplJadwal extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(254, 211, 48));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Tampilan/Files-2-icon (1).png"))); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Tampilan/Files-2-icon.png"))); // NOI18N
 
         jLabel1.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
-        jLabel1.setText("LOG ACITIVITY");
+        jLabel1.setText("LOG ACITIVITY MAHASISWA");
 
         txtsearch.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Tampilan/Zoom-icon.png"))); // NOI18N
         txtsearch.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -150,9 +150,9 @@ public class tmplJadwal extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 326, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 286, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 162, Short.MAX_VALUE)
                 .addComponent(txtshow)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(txtsearch)

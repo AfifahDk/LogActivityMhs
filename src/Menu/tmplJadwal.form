@@ -46,9 +46,9 @@
               <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jLabel1" min="-2" pref="150" max="-2" attributes="0"/>
-                  <EmptySpace pref="326" max="32767" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Component id="jLabel1" min="-2" pref="286" max="-2" attributes="0"/>
+                  <EmptySpace pref="162" max="32767" attributes="0"/>
                   <Component id="txtshow" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="txtsearch" min="-2" max="-2" attributes="0"/>
@@ -87,7 +87,7 @@
         <Component class="javax.swing.JLabel" name="jLabel3">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Tampilan/Files-2-icon (1).png"/>
+              <Image iconType="3" name="/Tampilan/Files-2-icon.png"/>
             </Property>
           </Properties>
         </Component>
@@ -96,7 +96,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Comic Sans MS" size="18" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="LOG ACITIVITY"/>
+            <Property name="text" type="java.lang.String" value="LOG ACITIVITY MAHASISWA"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="txtsearch">
