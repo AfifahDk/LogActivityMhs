@@ -48,7 +48,7 @@
                   <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jLabel1" min="-2" pref="150" max="-2" attributes="0"/>
-                  <EmptySpace pref="310" max="32767" attributes="0"/>
+                  <EmptySpace pref="326" max="32767" attributes="0"/>
                   <Component id="txtshow" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="txtsearch" min="-2" max="-2" attributes="0"/>
@@ -87,7 +87,7 @@
         <Component class="javax.swing.JLabel" name="jLabel3">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\ASUS\Desktop\ikon\Files-2-icon.png"/>
+              <Image iconType="3" name="/Tampilan/Files-2-icon (1).png"/>
             </Property>
           </Properties>
         </Component>
@@ -102,7 +102,7 @@
         <Component class="javax.swing.JLabel" name="txtsearch">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\ASUS\Desktop\ikon\Zoom-icon.png"/>
+              <Image iconType="3" name="/Tampilan/Zoom-icon.png"/>
             </Property>
           </Properties>
           <Events>
@@ -112,7 +112,7 @@
         <Component class="javax.swing.JLabel" name="txtshow">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\ASUS\Desktop\ikon\Button-1-play-icon (1).png"/>
+              <Image iconType="3" name="/Tampilan/Button-1-play-icon (1).png"/>
             </Property>
           </Properties>
           <Events>
@@ -254,7 +254,7 @@
                 <Component class="javax.swing.JLabel" name="txtback">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="2" name="C:\Users\ASUS\Desktop\ikon\Arrow-prevous-5-icon.png"/>
+                      <Image iconType="3" name="/Tampilan/Arrow-prevous-5-icon.png"/>
                     </Property>
                   </Properties>
                   <Events>

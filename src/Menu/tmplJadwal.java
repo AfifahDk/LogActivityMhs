@@ -118,19 +118,19 @@ public class tmplJadwal extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(254, 211, 48));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\ASUS\\Desktop\\ikon\\Files-2-icon.png")); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Tampilan/Files-2-icon (1).png"))); // NOI18N
 
         jLabel1.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
         jLabel1.setText("LOG ACITIVITY");
 
-        txtsearch.setIcon(new javax.swing.ImageIcon("C:\\Users\\ASUS\\Desktop\\ikon\\Zoom-icon.png")); // NOI18N
+        txtsearch.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Tampilan/Zoom-icon.png"))); // NOI18N
         txtsearch.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 txtsearchMouseClicked(evt);
             }
         });
 
-        txtshow.setIcon(new javax.swing.ImageIcon("C:\\Users\\ASUS\\Desktop\\ikon\\Button-1-play-icon (1).png")); // NOI18N
+        txtshow.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Tampilan/Button-1-play-icon (1).png"))); // NOI18N
         txtshow.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 txtshowMouseClicked(evt);
@@ -152,7 +152,7 @@ public class tmplJadwal extends javax.swing.JFrame {
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 310, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 326, Short.MAX_VALUE)
                 .addComponent(txtshow)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(txtsearch)
@@ -202,7 +202,7 @@ public class tmplJadwal extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(254, 211, 48));
 
-        txtback.setIcon(new javax.swing.ImageIcon("C:\\Users\\ASUS\\Desktop\\ikon\\Arrow-prevous-5-icon.png")); // NOI18N
+        txtback.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Tampilan/Arrow-prevous-5-icon.png"))); // NOI18N
         txtback.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 txtbackMouseClicked(evt);

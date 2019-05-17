@@ -49,7 +49,6 @@ public class MenuUtama extends javax.swing.JFrame {
         txtass = new javax.swing.JLabel();
         txtsc = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
         txtout = new javax.swing.JLabel();
         txtabout = new javax.swing.JLabel();
@@ -127,9 +126,6 @@ public class MenuUtama extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         jLabel4.setText("Assigment");
 
-        jLabel7.setFont(new java.awt.Font("Lemon", 0, 12)); // NOI18N
-        jLabel7.setText("jLabel7");
-
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
@@ -153,17 +149,11 @@ public class MenuUtama extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 424, Short.MAX_VALUE)
                         .addComponent(jLabel1)
                         .addGap(170, 170, 170))))
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(238, 238, 238)
-                .addComponent(jLabel7)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel7)
-                .addGap(36, 36, 36)
+                .addGap(63, 63, 63)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -173,7 +163,7 @@ public class MenuUtama extends javax.swing.JFrame {
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(txtass)
                     .addComponent(txtsc))
-                .addContainerGap(63, Short.MAX_VALUE))
+                .addContainerGap(60, Short.MAX_VALUE))
         );
 
         jPanel4.add(jPanel5, "card2");
@@ -203,7 +193,7 @@ public class MenuUtama extends javax.swing.JFrame {
             }
         });
 
-        txtabout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Tampilan/Button-Help-icon.png"))); // NOI18N
+        txtabout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Tampilan/Button-Help-icon (1) - Copy.png"))); // NOI18N
         txtabout.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 txtaboutMouseClicked(evt);
@@ -225,11 +215,10 @@ public class MenuUtama extends javax.swing.JFrame {
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(txtout)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(txtabout)
+                    .addComponent(txtout))
                 .addGap(45, 45, 45))
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addComponent(txtabout)
-                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -340,7 +329,6 @@ public class MenuUtama extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    public javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel4;

@@ -68,6 +68,11 @@ public class Login extends javax.swing.JFrame {
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
 
         txtUsername.setBackground(new java.awt.Color(240, 240, 240));
+        txtUsername.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtUsernameActionPerformed(evt);
+            }
+        });
 
         btnLogin.setBackground(new java.awt.Color(254, 211, 48));
         btnLogin.setFont(new java.awt.Font("Comic Sans MS", 1, 12)); // NOI18N
@@ -115,7 +120,6 @@ public class Login extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(btnLogin)
                                 .addGap(91, 91, 91))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -216,7 +220,7 @@ public class Login extends javax.swing.JFrame {
                 n.pack();
                 n.setLocationRelativeTo(null);
                 n.setExtendedState(Login.MAXIMIZED_HORIZ);
-                n.jLabel7.setText("HAAII! < "+Username+" >");
+               //n.jLabel7.setText("HAAII! < "+Username+" >");
 
                 this.dispose();
             }
@@ -244,6 +248,10 @@ public class Login extends javax.swing.JFrame {
 
         this.dispose();
     }//GEN-LAST:event_btnSignupMouseClicked
+
+    private void txtUsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsernameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtUsernameActionPerformed
 
     
     /**
