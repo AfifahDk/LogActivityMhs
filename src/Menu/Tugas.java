@@ -62,14 +62,12 @@ public class Tugas extends javax.swing.JFrame {
         jTable1 = new javax.swing.JTable();
         jScrollPane3 = new javax.swing.JScrollPane();
         jTable3 = new javax.swing.JTable();
-        jLabel1 = new javax.swing.JLabel();
         NoTugas = new javax.swing.JLabel();
         NamaTugas = new javax.swing.JLabel();
         Matkul = new javax.swing.JLabel();
         Hari = new javax.swing.JLabel();
         Waktu = new javax.swing.JLabel();
         btClear = new javax.swing.JButton();
-        btShow = new javax.swing.JButton();
         btUpdate = new javax.swing.JButton();
         btinsert = new javax.swing.JButton();
         btDelete = new javax.swing.JButton();
@@ -79,7 +77,12 @@ public class Tugas extends javax.swing.JFrame {
         cbHari = new javax.swing.JComboBox();
         txtWaktu = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        btnexit = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        txtexit = new javax.swing.JLabel();
+        txtshow = new javax.swing.JLabel();
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -110,32 +113,23 @@ public class Tugas extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Aplikasi");
         setBackground(new java.awt.Color(51, 51, 255));
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel1.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
-        jLabel1.setText("TUGAS");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(303, 11, -1, -1));
 
         NoTugas.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
         NoTugas.setText("No tugas");
-        getContentPane().add(NoTugas, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 50, -1, -1));
 
         NamaTugas.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
         NamaTugas.setText("Nama tugas");
-        getContentPane().add(NamaTugas, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 80, -1, -1));
 
         Matkul.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
         Matkul.setText("Nama Matakuliah");
-        getContentPane().add(Matkul, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 110, -1, -1));
 
         Hari.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
         Hari.setText("Hari Pengumpulan");
-        getContentPane().add(Hari, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 140, -1, -1));
 
         Waktu.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
         Waktu.setText("Waktu Pengumpulan");
-        getContentPane().add(Waktu, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 180, -1, -1));
 
+        btClear.setBackground(new java.awt.Color(254, 211, 48));
         btClear.setFont(new java.awt.Font("Comic Sans MS", 1, 11)); // NOI18N
         btClear.setText("Clear");
         btClear.addActionListener(new java.awt.event.ActionListener() {
@@ -143,17 +137,8 @@ public class Tugas extends javax.swing.JFrame {
                 btClearActionPerformed(evt);
             }
         });
-        getContentPane().add(btClear, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 240, -1, -1));
 
-        btShow.setFont(new java.awt.Font("Comic Sans MS", 1, 11)); // NOI18N
-        btShow.setText("Show");
-        btShow.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btShowActionPerformed(evt);
-            }
-        });
-        getContentPane().add(btShow, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 280, -1, -1));
-
+        btUpdate.setBackground(new java.awt.Color(254, 211, 48));
         btUpdate.setFont(new java.awt.Font("Comic Sans MS", 1, 11)); // NOI18N
         btUpdate.setText("Update");
         btUpdate.addActionListener(new java.awt.event.ActionListener() {
@@ -161,8 +146,8 @@ public class Tugas extends javax.swing.JFrame {
                 btUpdateActionPerformed(evt);
             }
         });
-        getContentPane().add(btUpdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 240, -1, -1));
 
+        btinsert.setBackground(new java.awt.Color(254, 211, 48));
         btinsert.setFont(new java.awt.Font("Comic Sans MS", 1, 11)); // NOI18N
         btinsert.setText("Insert");
         btinsert.addActionListener(new java.awt.event.ActionListener() {
@@ -170,8 +155,8 @@ public class Tugas extends javax.swing.JFrame {
                 btinsertActionPerformed(evt);
             }
         });
-        getContentPane().add(btinsert, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 240, -1, -1));
 
+        btDelete.setBackground(new java.awt.Color(254, 211, 48));
         btDelete.setFont(new java.awt.Font("Comic Sans MS", 1, 11)); // NOI18N
         btDelete.setText("Delete");
         btDelete.addActionListener(new java.awt.event.ActionListener() {
@@ -179,40 +164,173 @@ public class Tugas extends javax.swing.JFrame {
                 btDeleteActionPerformed(evt);
             }
         });
-        getContentPane().add(btDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 240, -1, -1));
 
         txtNoTugas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtNoTugasActionPerformed(evt);
             }
         });
-        getContentPane().add(txtNoTugas, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 50, 218, -1));
-        getContentPane().add(txtNamaTugas, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 80, 218, -1));
-        getContentPane().add(txtMatkul, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 110, 218, -1));
 
         cbHari.setFont(new java.awt.Font("Comic Sans MS", 0, 11)); // NOI18N
         cbHari.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "SENIN", "SELASA", "RABU", "KAMIS", "JUMAT", "SABTU", "MINGGU" }));
-        getContentPane().add(cbHari, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 140, 110, -1));
 
         txtWaktu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtWaktuActionPerformed(evt);
             }
         });
-        getContentPane().add(txtWaktu, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 180, 218, -1));
 
         jLabel2.setForeground(new java.awt.Color(255, 0, 0));
         jLabel2.setText("*Tahun-Bulan-Tanggal Jam:Menit:Detik");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 210, 218, -1));
 
-        btnexit.setFont(new java.awt.Font("Comic Sans MS", 1, 12)); // NOI18N
-        btnexit.setText("Back to menu");
-        btnexit.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnexitActionPerformed(evt);
+        jPanel1.setBackground(new java.awt.Color(254, 211, 48));
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Tampilan/compose-icon.png"))); // NOI18N
+
+        jLabel9.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
+        jLabel9.setText("LOG ACTIVITY MAHASISWA");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addComponent(jLabel3)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel9)
+                .addContainerGap(120, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel3))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(29, 29, 29)
+                        .addComponent(jLabel9)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jPanel2.setBackground(new java.awt.Color(254, 211, 48));
+
+        txtexit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Tampilan/Home-icon (2).png"))); // NOI18N
+        txtexit.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtexitMouseClicked(evt);
             }
         });
-        getContentPane().add(btnexit, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 280, 110, 30));
+
+        txtshow.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Tampilan/Files-2-icon (1).png"))); // NOI18N
+        txtshow.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtshowMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(txtexit)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(txtshow)
+                .addContainerGap())
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(5, 5, 5)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtshow)
+                    .addComponent(txtexit))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addGap(49, 49, 49)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(btClear)
+                                .addGap(35, 35, 35)
+                                .addComponent(btUpdate)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btDelete)
+                                .addGap(29, 29, 29)
+                                .addComponent(btinsert))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(Matkul)
+                                    .addGap(66, 66, 66)
+                                    .addComponent(txtMatkul, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(Hari)
+                                    .addGap(65, 65, 65)
+                                    .addComponent(cbHari, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(Waktu)
+                                    .addGap(54, 54, 54)
+                                    .addComponent(txtWaktu, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addGap(160, 160, 160)
+                                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(NoTugas)
+                                    .addGap(110, 110, 110)
+                                    .addComponent(txtNoTugas, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(NamaTugas)
+                                    .addGap(96, 96, 96)
+                                    .addComponent(txtNamaTugas, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                .addGap(0, 2, Short.MAX_VALUE))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(47, 47, 47)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtNoTugas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(NoTugas))
+                .addGap(10, 10, 10)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(NamaTugas)
+                    .addComponent(txtNamaTugas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(10, 10, 10)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Matkul)
+                    .addComponent(txtMatkul, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(10, 10, 10)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Hari)
+                    .addComponent(cbHari, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(17, 17, 17)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Waktu)
+                    .addComponent(txtWaktu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(10, 10, 10)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 81, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btinsert)
+                    .addComponent(btUpdate)
+                    .addComponent(btDelete)
+                    .addComponent(btClear))
+                .addGap(18, 18, 18)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
 
         pack();
         setLocationRelativeTo(null);
@@ -272,12 +390,6 @@ public class Tugas extends javax.swing.JFrame {
         kosong();
     }//GEN-LAST:event_btUpdateActionPerformed
 
-    private void btShowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btShowActionPerformed
-            dispose();
-            tmpltugas n = new tmpltugas(Username);
-            n.setVisible(true);
-    }//GEN-LAST:event_btShowActionPerformed
-
     private void txtWaktuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtWaktuActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtWaktuActionPerformed
@@ -291,13 +403,19 @@ public class Tugas extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btClearActionPerformed
 
-    private void btnexitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnexitActionPerformed
-        //        System.exit(0);
+    private void txtexitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtexitMouseClicked
+        // TODO add your handling code here:
         dispose();
         MenuUtama n = new MenuUtama();
         n.setVisible(true);
+    }//GEN-LAST:event_txtexitMouseClicked
 
-    }//GEN-LAST:event_btnexitActionPerformed
+    private void txtshowMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtshowMouseClicked
+        // TODO add your handling code here:
+        dispose();
+            tmpltugas n = new tmpltugas(Username);
+            n.setVisible(true);
+    }//GEN-LAST:event_txtshowMouseClicked
      
     /**
      * @param args the command line arguments
@@ -342,13 +460,14 @@ public class Tugas extends javax.swing.JFrame {
     private javax.swing.JLabel Waktu;
     private javax.swing.JButton btClear;
     private javax.swing.JButton btDelete;
-    private javax.swing.JButton btShow;
     private javax.swing.JButton btUpdate;
     private javax.swing.JButton btinsert;
-    private javax.swing.JButton btnexit;
     private javax.swing.JComboBox cbHari;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTable jTable1;
@@ -358,5 +477,7 @@ public class Tugas extends javax.swing.JFrame {
     private javax.swing.JTextField txtNamaTugas;
     private javax.swing.JTextField txtNoTugas;
     private javax.swing.JTextField txtWaktu;
+    private javax.swing.JLabel txtexit;
+    private javax.swing.JLabel txtshow;
     // End of variables declaration//GEN-END:variables
 }
