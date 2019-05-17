@@ -154,7 +154,7 @@ public class MenuUtama extends javax.swing.JFrame {
                         .addComponent(jLabel1)
                         .addGap(170, 170, 170))))
             .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(259, 259, 259)
+                .addGap(238, 238, 238)
                 .addComponent(jLabel7)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
