@@ -23,8 +23,6 @@ import javax.swing.JTextField;
  * @author acer
  */
 public class Login extends javax.swing.JFrame {
-    public static Connection con;
-    public static Statement stm;
     ResultSet rs;
     String sql;
     String Username;
@@ -34,10 +32,7 @@ public class Login extends javax.swing.JFrame {
      */
     public Login() throws SQLException {
         initComponents();
-        konek DB = new konek();
-        konekDB();
-        con = DB.con;
-        stm = DB.stm;
+        
     }
 
     

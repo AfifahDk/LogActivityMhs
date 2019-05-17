@@ -20,8 +20,6 @@ import javax.swing.JOptionPane;
  * @author acer
  */
 public class Register extends javax.swing.JFrame {
-    public static Connection con;
-    public static Statement stm;
     ResultSet rs;
     String sql;
     private Object koneksi;
@@ -41,8 +39,7 @@ public class Register extends javax.swing.JFrame {
         initComponents();
         konek DB = new konek();
         konekDB();
-        con = DB.con;
-        stm = DB.stm;
+       
     }
 
     /**
@@ -274,11 +271,11 @@ public class Register extends javax.swing.JFrame {
     String sql = "INSERT INTO `register` (`nama_lengkap`, `username`, `password`) VALUES (?,?,?)";
         try {
             pstm= konek.konekDB().prepareStatement(sql);
-           
-            pstm.setString(1, Nama);
+           // untuk mendapatkan data  yang telah dimasukkan
+            pstm.setString(1, Nama); //1-3 adalah Parameter index dari kolom yang terdapat di database
             pstm.setString(2, Username);
             pstm.setString(3, Password);
-            
+           
             if(pstm.executeUpdate()>0){
                 JOptionPane.showMessageDialog(null, "New User Add");
             }
@@ -295,7 +292,7 @@ public class Register extends javax.swing.JFrame {
       String sql ="SELECT * FROM `register` WHERE `username` =?";
         try {
             pstm = konek.konekDB().prepareStatement(sql);
-            pstm.setString(1, Username);
+            pstm.setString(1, Username);//pengecekan username berdasarkan pada key nama
             rs=pstm.executeQuery();
        
        if(rs.next()){
