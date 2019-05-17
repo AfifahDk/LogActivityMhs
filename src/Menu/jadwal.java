@@ -372,9 +372,12 @@ public class jadwal extends javax.swing.JFrame {
 
     private void btnshowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnshowActionPerformed
         // TODO add your handling code here:
-        dispose();
         tmplJadwal n = new tmplJadwal(Username);
         n.setVisible(true);
+        n.pack();
+        n.setLocationRelativeTo(null);
+        n.setExtendedState(MenuUtama.MAXIMIZED_HORIZ);              
+        this.dispose();
     }//GEN-LAST:event_btnshowActionPerformed
 
     /**
